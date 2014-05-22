@@ -1,0 +1,21 @@
+@import 'normalize';
+@import 'grid';
+@import 'elements';
+
+*{
+	box-sizing: border-box;
+}
+body{
+	background: #bbb;
+}
+.show{
+	opacity: 1;
+}
+
+
+#content{
+	padding: 10px 5%;
+}
+
+
+@import 'helpers';

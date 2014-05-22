@@ -1,0 +1,10 @@
+
+<ul class="msg-list">
+	<% _.each(messages, function(msg, i) { 	%>
+	<li>
+		<div class="view-message-cta" data-id="<%-msg._id%>"><span class="date"><%- msg.createdAt %></span><%- msg.textMessage %></div>
+	</li>
+	<% }); %>		
+</ul>
+
+<div class="pagepadding"></div>

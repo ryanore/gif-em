@@ -1,0 +1,25 @@
+<form action="/message" id="new-msg-form">
+	<legend>New Message Form</legend>
+	<div class="form-element">
+		<label for="sender">
+			Your Name: <dfn title="required">*</dfn>
+		</label>
+		<input id="sender"  name="sender" placeholder="Jon Doe" type="text"  />
+	</div>
+	<div class="form-element">
+		<label for="title">
+			Recipient's Name: <dfn title="required">*</dfn>
+		</label>
+		<input id="recipient"  type="text"  name="recipient" required="required" placeholder="Jane Doe" />
+	</div>
+	<div class="form-element">
+		<label for="textMessage">
+			Message: <dfn title="required">*</dfn>
+		</label>
+		<textarea id="textMessage" name="textMessage"></textarea>
+	</div>
+	<div class="form-element">
+		<input id="submit-msg" type="submit" value="Submit">
+	</div>
+	<div class="view-message-cta">View Your Message!</div>
+</form>	
