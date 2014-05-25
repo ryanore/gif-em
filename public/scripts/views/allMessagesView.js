@@ -37,7 +37,6 @@ function(
 			Backbone.Events.trigger('nav:message', id);
 		},
 
-
         render: function () {
 			var msgs = this.model.toJSON();
 			$(this.el).html(this.template({messages: msgs}));
@@ -46,7 +45,9 @@ function(
 
         close: function () {
 			utils.log('close');
+			return this;
 		}
+	
 
     });
     

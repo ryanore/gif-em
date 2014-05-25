@@ -37,8 +37,6 @@ function(
 		},
 
 		render: function () {
-			console.log('RENDER RECENT');
-			
 			var msgs = this.model.toJSON();
 			$(this.el).html(this.template({messages: msgs}));
 			return this;
@@ -46,6 +44,7 @@ function(
 
 		close: function () {
 			utils.log('close');
+			return this;
 		}
 
     });

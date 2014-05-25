@@ -2,6 +2,7 @@
 var Ntihya = (function(){
 	
 	var Messages = require('./controllers/message');
+	var Giphy = require('./controllers/giphy');
 	
 	return {
 	
@@ -10,6 +11,12 @@ var Ntihya = (function(){
 			router.route('/message')
 				.post( Messages.create )
 				.get( Messages.list );
+
+			router.route('/giphy')
+				.get( Giphy.trending );
+
+			router.route('/giphy/search/:terms')
+				.get( Giphy.search );
 
 			router.route('/message/:id')
 				.get( Messages.load )

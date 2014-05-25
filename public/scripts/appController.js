@@ -7,7 +7,9 @@ define([
 	'MessageView',
 	'AllMessagesView',
 	'MessagesCollection',
-	'CreateMessageView'
+	'CreateMessageView',
+	'SearchGiphyView',
+	'GiphyCollection'
 ],function(
 	$,
 	_,
@@ -17,7 +19,9 @@ define([
 	MessageView,
 	AllMessagesView,
 	MessagesCollection,
-	CreateMessageView
+	CreateMessageView,
+	SearchGiphyView,
+	GiphyCollection
 ){
 
 	'use strict';
@@ -28,6 +32,7 @@ define([
 	var $loadingDiv = $('#loading');
 	var $content = $('#content');
 	var $pages = $('.page');
+	var $giphySearch = {};
 
 	var AppRouter = Backbone.Router.extend({
 		routes: {
@@ -35,7 +40,8 @@ define([
 			'home'			: 'home',
 			'message/:id'   : 'message',
 			'messages'		: 'messages',
-			'messages/new'	: 'newmessage',
+			'messages/new'	: 'newMessage',
+			'search-giphy'	: 'searchGiphy',
 			'*actions'		: 'defaultAction'
 		}
 	});
@@ -48,12 +54,14 @@ define([
 		router.on('route:home', home );
 		router.on('route:messages', messages );
 		router.on('route:message', message );
-		router.on('route:newmessage', newMessage );
+		router.on('route:newMessage', newMessage );
+		router.on('route:searchGiphy', searchGiphy );
 		
 		Backbone.Events.on('nav:home', home);
 		Backbone.Events.on('nav:messages', messages);
 		Backbone.Events.on('nav:message', message);
-		Backbone.Events.on('nav:newmessage', newMessage);
+		Backbone.Events.on('nav:newMessage', newMessage);
+		Backbone.Events.on('nav:searchGiphy', searchGiphy);
 
 		Backbone.history.start();
 	};
@@ -62,7 +70,6 @@ define([
 	// Replaces the view with new content... after transition
 	var setContent = function(view){
 		currentView = view;
-		console.log(view.el);
 		$content.html(view.el).stop().animate({opacity:1}, 200,function(){});
     };
 
@@ -85,7 +92,6 @@ define([
 	*** BEGIN  ROUTES *****
 	**********************/
 	var home = function () {
-		selectMenuItem('nav-home');
 		transition(function(){
 			setContent( new HomeView() );
 			router.navigate('home');
@@ -93,18 +99,14 @@ define([
 	};
 
 	var newMessage = function () {
-		selectMenuItem();
-		console.log('newMessage');
 		transition(function(){
 			var view = new CreateMessageView( { model: new Message() } );
-			console.log(view);
 			setContent( view );
 			router.navigate('messages/new');
 		});
 	};
 
 	var message = function ($id) {
-		selectMenuItem();
 		transition(function(){
 			var message = new Message({id: $id});
 			message.fetch({success: function(options){
@@ -115,13 +117,20 @@ define([
 	};
 
 	var messages = function () {
-		selectMenuItem();
 		transition(function(){
 			var msgList = new MessagesCollection();
 			msgList.fetch({success: function(){
 				setContent( new AllMessagesView({model: msgList}));
 				router.navigate('messages');
 			}});
+		});
+	};
+
+	var searchGiphy = function () {
+		transition(function(){
+			// var gifs = new GiphyCollection();
+			setContent( new SearchGiphyView({model: GiphyCollection}));
+			router.navigate('search-giphy');
 		});
 	};
 	

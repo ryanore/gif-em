@@ -32,13 +32,13 @@ function(
         },
 
         render: function () {
-	console.log('RENDER MESSAGE');
 			this.$el.html(this.template(this.model.toJSON()));
 			return this;
         },
 
 		// Clean UP
 		close: function () {
+			return this;
 		}
 
 	});

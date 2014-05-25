@@ -31,15 +31,13 @@ function(
 		create: new CreateMessageView({model: new MessageModel()}),
 		recent: new RecentMessagesView({model: new MessagesCollection()}),
 
-		
 		initialize:function () {
 			this.render();
 		},
 
-
         render:function () {
-			console.log("RENDER HOME");
 			var self = this;
+			
 			$(this.el).html(this.template());
 			
 			var createContainer = $(this.el).find('#create-message');
@@ -60,6 +58,7 @@ function(
 
         close: function () {
 			utils.log('close');
+			return this;
 		}
 
     });

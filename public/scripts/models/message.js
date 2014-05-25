@@ -10,6 +10,7 @@ function($, _, Backbone){
 			sender: '',
 			textMessage: '',
 			public: true,
+			imgUrl: '/images/placeholder.gif',
 			createdAt: new Date()
 			
 		},

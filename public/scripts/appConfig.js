@@ -7,18 +7,23 @@ require.config({
 		utils:'lib/utils',
 
 		MessageModel:'models/message',
+		GiphyModel:'models/giphy',
+		
 		MessagesCollection:'collections/messages',
+		GiphyCollection:'collections/giphys',
         
 		HomeView:'views/homeView',
 		MessageView:'views/messageView',
 		AllMessagesView:'views/allMessagesView',
 		RecentMessagesView:'views/recentMessagesView',
 		CreateMessageView:'views/createMessageView',
+		SearchGiphyView:'views/searchGiphyView',
 
 		homeTemplate:'templates/homeTemplate.ejs',
 		messageTemplate:'templates/messageTemplate.ejs',
 		allMessagesTemplate:'templates/allMessagesTemplate.ejs',
-		createMessageTemplate:'templates/createMessageTemplate.ejs'
+		createMessageTemplate:'templates/createMessageTemplate.ejs',
+		searchGiphyTemplate:'templates/searchGiphyTemplate.ejs'
 	},
     shim: { }
 });
