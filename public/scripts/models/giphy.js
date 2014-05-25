@@ -5,13 +5,17 @@ function($, _, Backbone){
 	
     var Giphy = Backbone.Model.extend({
         urlRoot: '/giphy',
-		defaults: {},
+		idAttribute: "id",
+		defaults: {
+			original:{},
+			small:{}
+		},
 		initialize: function () {
 			console.log('init giphy model')
 		}
     });
 
-	return new Giphy();
+	return Giphy;
 	
 });
 
