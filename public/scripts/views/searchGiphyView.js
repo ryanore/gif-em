@@ -24,14 +24,22 @@ function(
 		
 		template: _.template(searchGiphyTemplate),
 		
-		events: {},
+		events: {
+			'submit .giphy-search': "searchSubmit"
+		},
+		
+		searchSubmit: function(e){
+			var terms = $('input[type="search"]').val();
+			$.getJSON('/giphy/search/'+terms, function(data){
+				console.log(data);
+			})
+		},
 		
 		initialize: function () {
 			this.render();
 		},
 		
 		render: function () {
-			console.log(this.model);
 			this.$el.html(this.template(this.model.toJSON()));
 			return this;
 		},
