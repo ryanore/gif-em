@@ -3,22 +3,14 @@ define([
 	'underscore',
 	'backbone',
 	'utils',
-	'CreateMessageView',
-	'RecentMessagesView',
-	'MessagesCollection',
-	'text!homeTemplate',
-	'MessageModel'
+	'text!homeTemplate'
 ],
 function(
 	$,
 	_,
 	Backbone,
 	utils,
-	CreateMessageView,
-	RecentMessagesView,
-	MessagesCollection,
-	homeTemplate,
-	MessageModel
+	homeTemplate
 ){
 	
 	'use strict';
@@ -28,8 +20,6 @@ function(
 		tagName: 'section',
 		className: 'page',
 		id: 'home',
-		create: new CreateMessageView({model: new MessageModel()}),
-		recent: new RecentMessagesView({model: new MessagesCollection()}),
 
 		initialize:function () {
 			this.render();
@@ -40,27 +30,13 @@ function(
 			
 			$(this.el).html(this.template());
 			
-			var createContainer = $(this.el).find('#create-message');
-			createContainer.append(this.create.el);
-			
-			var prevContainer = $(this.el).find('#previous-messages');
-			prevContainer.append(this.recent.el);
-			
-			this.recent.model.fetch( {
-				success: function(){
-					self.recent.render();
-				}
-			});
-			
 			return this;
 		},
-
 
         close: function () {
 			utils.log('close');
 			return this;
 		}
-
     });
 });
 

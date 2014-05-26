@@ -11,6 +11,9 @@ function($){
 			if( ENV !== 'production'){
 				console.log(content);
 			}
+		},
+		isTouch: function(){
+			return false;
 		}
     };
 

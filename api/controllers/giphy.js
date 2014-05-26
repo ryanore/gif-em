@@ -15,8 +15,10 @@ var makeRequest = function(requestString, callback){
 	    });
 	})
 	.on('error', function(e) {
-	  console.log("Got error: " + e.message);
-	  callback(e)
+	  var msg = {
+		error: e.message
+	  }
+	  callback(msg);
 	});
 };
 
@@ -31,8 +33,8 @@ var buildGiphyData = function(data, callback){
 			id: img.id,
 			original: img.images.original,
 			small: {
-				still: img.images.fixed_height_still.url,			
-				url: img.images.fixed_height.url
+				still: img.images.fixed_width_still.url,			
+				url: img.images.fixed_width.url
 			}
 		});
 	}
@@ -52,7 +54,11 @@ var buildGiphyData = function(data, callback){
 */
 exports.trending = function(req, res){
 	var requestString = '/v1/gifs/trending?'+ "&api_key="+api_key;
-	 	makeRequest(requestString, function(data){
+ 	makeRequest(requestString, function(data){
+		if( data.error ){
+			res.json(data);
+			return;
+		}
 		buildGiphyData(data, function(giphy){
 			res.json(giphy);
 		});
@@ -76,6 +82,10 @@ exports.search = function(req, res) {
 		+ "&api_key="+api_key;
 	
  	makeRequest(requestString, function(data){
+		if( data.error ){
+			res.json(data);
+			return;
+		}
  		buildGiphyData(data, function(giphy){
  			res.json(giphy);
  		});
