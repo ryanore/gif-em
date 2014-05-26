@@ -39,7 +39,6 @@ define([
 			'message/:id'   : 'message',
 			'messages'		: 'messages',
 			'messages/new'	: 'newMessage',
-			'search-giphy'	: 'searchGiphy',
 			'*actions'		: 'defaultAction'
 		}
 	});
@@ -52,12 +51,11 @@ define([
 		router.on('route:messages', messages );
 		router.on('route:message', message );
 		router.on('route:newMessage', newMessage );
-		router.on('route:searchGiphy', searchGiphy );
 		Backbone.Events.on('nav:home', home);
 		Backbone.Events.on('nav:messages', messages);
 		Backbone.Events.on('nav:message', message);
 		Backbone.Events.on('nav:newMessage', newMessage);
-		Backbone.Events.on('nav:searchGiphy', searchGiphy);
+		Backbone.Events.on('nav:toggleSearch', toggleSearch);
 		Backbone.history.start();
 	};
 
@@ -100,11 +98,8 @@ define([
 		});
 	};
 
-	var searchGiphy = function () {
-		mainView.transition(function(){
-			mainView.setContent( new SearchGiphyView({model: GiphyCollection}));
-			router.navigate('search-giphy');
-		});
+	var toggleSearch = function () {
+		mainView.toggleSearch(new Function());
 	};
 	
 	return {

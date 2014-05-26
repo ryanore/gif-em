@@ -1,9 +1,11 @@
 'use strict';
 define(['jquery'],
 function($){
-	// avoid lint error, next line is temp
-	$ = $;
-	return {
+	var Utils = function(){
+		this.clickType = this.isTouch() ? 'click' : 'mousedown';
+	}
+	
+	Utils.prototype = {
 		slug : function(value) {
 			return value.toLowerCase().replace(/-+/g, '').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 		},
@@ -13,8 +15,9 @@ function($){
 			}
 		},
 		isTouch: function(){
-			return false;
+			return true;
 		}
     };
 
+	return new Utils();
 });

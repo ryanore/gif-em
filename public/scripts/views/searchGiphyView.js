@@ -18,25 +18,15 @@ function(
 	'use strict';
 
     var SearchGiphy = Backbone.View.extend({
-		tagName: 'section',
 		className: 'page',
 		id: 'search-giphy',
 		collection: GiphyCollection,
-		
 		template: _.template(searchGiphyTemplate),
+		container: null,
 		
 		events: {
-			'submit .giphy-search': "searchSubmit"
-		},
-		
-		searchSubmit: function(e){
-			e.preventDefault();
-			var self = this;
-			var terms = $('input[type="search"]').val();
-			this.collection.searchTerms = terms;
-			this.collection.fetch().success(function(){
-				self.render();
-			});
+			'submit .giphy-search': "searchSubmit",
+			'click .cancel, mousedown .cancel': "toggleSearch"
 		},
 		
 		initialize: function () {
@@ -47,15 +37,37 @@ function(
 		render: function () {
 			var thms = this.collection.toJSON();
 			this.$el.html(this.template({thumbs: thms}));
+			this.container = $('.search-giphy-container');
+			this.container.html(this.$el);
+			
 			return this;
 		},
 		
+		transition: function(){
+			this.container.toggleClass('show');
+		},
+		
 		close: function () {
-			utils.log('close searchGiphyView');
 			return this;
+		},
+		
+		toggleSearch: function(e){
+			Backbone.Events.trigger('nav:toggleSearch');
+		},
+		
+		
+		searchSubmit: function(e){
+			e.preventDefault();
+			var self = this;
+			var terms = $('input[type="search"]').val();
+			this.collection.searchTerms = terms;
+			this.collection.fetch().success(function(){
+				self.render();
+			});
 		}
     });
 
 
 	return  SearchGiphy;
+	
 });

@@ -31,7 +31,8 @@ function(
 
 		events: {
 			'submit #new-msg-form'   : 'submitMessage',
-			'click .view-message-cta'   : 'navigateToMessage'
+			'click .cta-view-message'   : 'navigateToMessage',
+			'click .cta-find-a-gif'   : 'toggleSearch'
 		},
 
 
@@ -42,9 +43,12 @@ function(
 		},
 		
 		navigateToMessage: function(e){
-			e.preventDefault();
 			var id = $(e.currentTarget).data('id');
 			Backbone.Events.trigger('nav:message', id);
+		},
+		
+		toggleSearch: function(e){
+			Backbone.Events.trigger('nav:toggleSearch');
 		},
 		
 		showSuccess: function(){
