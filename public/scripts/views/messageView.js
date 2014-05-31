@@ -26,6 +26,11 @@ function(
 		className: 'page',
 		id: 'message',
 		
+		events: function() {
+	        var events = {};
+		    return events;
+	    },
+	    
 		initialize: function () {
 			_.bindAll(this, 'render');
 			this.render();
@@ -33,6 +38,12 @@ function(
 
         render: function () {
 			this.$el.html(this.template(this.model.toJSON()));
+			setTimeout(function(){
+				$('.msg-body').animate({opacity:1},function(){
+					$('[data-fade]').addClass('show');
+				})
+				
+			}, 2000);			
 			return this;
         },
 

@@ -1,0 +1,60 @@
+.msg-container{
+	display: table;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top:0;left:0;right:0;bottom:0;
+	*{
+		text-align: center;
+	}
+}
+
+.msg-body{
+	opacity: 0;
+	display: table-cell;
+	vertical-align: middle;
+}
+.msg-container{
+	&.white-on-black{
+		.msg-body .inner{
+			padding: 20px 5px;
+			background: rgba(0,0,0,.3);
+			h1,h2,p{
+				color: $white;
+			}
+		}
+	}
+	
+	&.black-on-white{
+		.msg-body .inner{
+			padding: 20px 5px;
+			margin: 0 2%;
+			background: rgba(255,255,255,.3);
+			border: 3px solid black;
+			h1,h2,p{
+				color: #000;
+			}
+				
+		}
+	}
+}
+[data-fade]{
+	opacity: 0;
+	@include transition-property(opacity);
+  @include transition-timing-function(ease-in);
+	@include transition-duration(.25s);
+}
+[data-fade].show{
+	opacity: 1;
+}
+[data-fade=".25"]{@include transition-delay(.25s);}
+[data-fade=".50"]{@include transition-delay(.50s);}
+[data-fade=".75"]{@include transition-delay(.75s);}
+[data-fade="1"]{@include transition-delay(1s);}
+[data-fade="1.25"]{@include transition-delay(1.25s);}
+[data-fade="1.5"]{@include transition-delay(1.5s);}
+[data-fade="1.75"]{@include transition-delay(1.75s);}
+[data-fade="2"]{@include transition-delay(2s);}
+

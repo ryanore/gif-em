@@ -1,10 +1,6 @@
 <form class="giphy-search"><input id="search-gifs" type="search" placeholder="Search Giphy for .gifs" result=5 name=s></form>
 <div class="scroll">
-		<% _.each(thumbs, function(thm, i) { 	%>
-			<div class="view-giphy-thumb">
-				<div data-id="<%-thm.id%>" style='background-image: url("<%-thm.small.still%>")'></div>
-			</div>
-		<% }); %>		
+	<!-- GIFS -->
 </div>
 <div class="footer">
 	<div class="cancel">Cancel</div>

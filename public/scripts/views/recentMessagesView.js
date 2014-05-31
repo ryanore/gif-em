@@ -22,10 +22,12 @@ function(
 		
 		template: _.template(allMessagesTemplate),
 
-		events: {
-			'click .view-message-cta'   : 'navigateToMessage'
-		},
-		
+	    events: function() {
+	        var events = {};
+			events[ utils.clickEvt+ ' .view-message-cta'] =  'navigateToMessage';
+	        return events;
+	    },
+
 		initialize: function () {
 			this.render();
 		},

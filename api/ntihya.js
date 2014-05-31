@@ -7,7 +7,6 @@ var Ntihya = (function(){
 	return {
 	
 		init: function(router){
-			/* Routes */
 			router.route('/message')
 				.post( Messages.create )
 				.get( Messages.list );
@@ -22,7 +21,6 @@ var Ntihya = (function(){
 				.get( Messages.load )
 				.put( Messages.update )
 				.delete( Messages.delete );
-			
 		}
 	}
 

@@ -28,15 +28,30 @@ exports.create = function(req, res) {
 };
 
 
-exports.load = function(req, res) {
-	Message.findById(req.params.id, function(err, msg) {
+
+
+// List all games
+exports.list = function(req, res) {
+	Message.list({}, function(err, items) {
 		if (err){
 			res.send(err);
 		}
-			
-		res.json(msg);
+		res.json(items);
+	})
+};
+
+
+
+// Display One Game 
+exports.load = function(req, res) {
+	Message.load(req.params.id, function(err, item) {
+		if (err){
+			res.send(err);
+		}
+		res.json(item);
 	});
 };
+
 
 
 exports.update = function(req,res){

@@ -1,0 +1,101 @@
+
+
+
+/* VENDOR PREFIXES*/
+
+@mixin vendorize($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+
+/* MEDIA QUERIES */
+@mixin respondMin($breakpoint) {
+    @media only screen and (min-width: $breakpoint + px) { @content; }
+}
+
+
+/* INPUTS  */
+
+%inputText {
+	margin: 0;
+	padding: 3px 10px;
+	max-width: 100%;
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	font-size: 1em;
+}
+@mixin inputText($color, $font) {
+	@extend %inputText;
+	@include transition-property(border-color);
+  @include transition-duration(.4s);
+  @include transition-timing-function(ease-in);
+	font-family: $font;
+	background: $color;
+}
+
+@mixin colorAlpha($brandColor, $alpha, $prop){
+	$prop: rgba($brandColor, $alpha);
+}
+
+
+/* LINKS */
+
+%link {
+	@include transition-property(background-color);
+  @include transition-duration(.15s);
+	font-family: $bodyFont;
+	text-decoration: none;
+	outline: none;
+	margin: 0;
+	display: inline-block;
+	cursor: pointer;
+	color: $brand;
+	&:hover, &:active, &:visited{
+		color: $brandHL;
+	}
+}
+
+/* BUTTONS */
+
+%btn {
+	@include transition-property(background-color);
+  @include transition-duration(.15s);
+	font-family: $headingFont;
+	border: none;
+	outline: none;
+	margin: 0;
+	padding: .4em 1em;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+}
+
+@mixin cta($color, $bgColor, $bgColorHover, $font) {
+	@extend %btn;
+	@include border-radius(4px);
+	color: $color;
+	background-color: $bgColor;
+	&:hover{
+		background-color: $bgColorHover;
+	}
+}
+
+@mixin brandCta() {
+	@extend %btn;
+	font-family: $headingFont;
+	color: $white;
+	background-color: $brand;
+	&:hover{
+		background-color: $brandHL;
+	}
+}
+
+@mixin scrollPanel(){
+	overflow-y: scroll; 
+  -webkit-overflow-scrolling: touch;
+}

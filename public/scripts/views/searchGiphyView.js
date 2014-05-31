@@ -4,7 +4,8 @@ define([
 	'backbone',
 	'utils',
 	'GiphyCollection',
-	'text!searchGiphyTemplate'
+	'text!searchGiphyTemplate',
+	'text!gifListTemplate'
 ],
 function(
 	$,
@@ -12,7 +13,8 @@ function(
 	Backbone,
 	utils,
 	GiphyCollection,
-	searchGiphyTemplate
+	searchGiphyTemplate,
+	gifListTemplate
 ){
 
 	'use strict';
@@ -23,24 +25,25 @@ function(
 		collection: GiphyCollection,
 		template: _.template(searchGiphyTemplate),
 		container: null,
-		
-		events: {
-			'submit .giphy-search': "searchSubmit",
-			'click .cancel, mousedown .cancel': "toggleSearch"
-		},
+		loading: false,
+	    
 		
 		initialize: function () {
-			this.collection.on ('change',this.render, this);
 			this.render();
 		},
-		
+	
+		events: function() {
+	        var events = {};
+			events[ utils.clickEvt+ ' .cancel'] =  'toggleSearch';
+			events[ 'submit form'] =  'searchSubmit';
+			$('.scroll').scroll(this.handleScroll.bind(this));
+	        return events;
+	    },
+	
 		render: function () {
-			var thms = this.collection.toJSON();
-			this.$el.html(this.template({thumbs: thms}));
+			this.$el.html(this.template());
 			this.container = $('.search-giphy-container');
 			this.container.html(this.$el);
-			
-			return this;
 		},
 		
 		transition: function(){
@@ -52,21 +55,38 @@ function(
 		},
 		
 		toggleSearch: function(e){
-			Backbone.Events.trigger('nav:toggleSearch');
+			e.preventDefault();
+			e.stopPropagation();
+ 				setTimeout( function(){
+				Backbone.Events.trigger('nav:toggleSearch');
+			}, 100);
 		},
 		
+		handleScroll: function(){
+			var triggerPoint = utils.isTouch? 10 : 10;
+	        if( !this.loading && this.el.scrollTop + this.el.clientHeight + triggerPoint > this.el.scrollHeight ) {
+				this.collection.pageUp();
+				this.fetchGiphy();
+	        }
+		},
 		
 		searchSubmit: function(e){
 			e.preventDefault();
-			var self = this;
 			var terms = $('input[type="search"]').val();
-			this.collection.searchTerms = terms;
+			this.collection.updateSearch(terms);
+			this.fetchGiphy();
+		},
+		
+		fetchGiphy: function(){
+			var self = this;
+			self.loading = true;
 			this.collection.fetch().success(function(){
-				self.render();
-			});
+				var thms = self.collection.toJSON();
+	          	$('.scroll').append(_.template(gifListTemplate, {thumbs: thms}));
+	          	self.loading = false;
+			});	
 		}
     });
-
 
 	return  SearchGiphy;
 	

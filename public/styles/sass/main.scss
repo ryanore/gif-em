@@ -1,6 +1,30 @@
+/*COLORS*/
+$bodyColor: #666;
+$white: #fff;
+$brand: rgb(21,123,178);			//#157BB2
+$brandHL: rgb(0,166,255);			//#00A6FF
+$brand2nd: rgb(234,132,0); 		//#FF8F00
+$brand2ndHL: rgb(255,155,25);	//#FF9B19
+
+/*BREAKPOINTS*/
+$tablet: 600px;
+$tabletWide: 900px;
+$desktop: 960px;
+$desktopWide: 1140px;
+
+
+/*FONTS*/
+$bodyFont: sans-serif;
+$headingFont: 'Chelsea Market', cursive;
+$formFont: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/*Layout*/
+$pagePadding: 20px 5%;
+$navHeightMobile: 45px;
+
 @import 'compass';
 @import 'compass/reset';
-@import 'global/config';
+@import "compass/css3/user-interface";
 @import 'global/grid';
 @import 'global/typography';
 @import 'global/mixins';

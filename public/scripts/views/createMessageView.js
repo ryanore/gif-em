@@ -23,19 +23,20 @@ function(
 		id: 'create-msg',
 		teams: [],
 		$frm: {},
+		clickEvt: utils.clickType,
 
         initialize: function () {
 		    _.bindAll(this, 'render');
 			this.render();
 		},
 
-		events: {
-			'submit #new-msg-form'   : 'submitMessage',
-			'click .cta-view-message'   : 'navigateToMessage',
-			'click .cta-find-a-gif'   : 'toggleSearch'
-		},
-
-
+	    events: function() {
+	        var events = {};
+			events[ 'submit #new-msg-form'] =  'submitMessage';
+			events[ utils.clickEvt+ ' .cta-find-a-gif'] =  'toggleSearch';
+	        return events;
+	    },
+	
 		showErrors: function( error ){
 			_.each( error , function(e){
 				utils.log( e.message );
@@ -48,6 +49,7 @@ function(
 		},
 		
 		toggleSearch: function(e){
+			e.preventDefault();
 			Backbone.Events.trigger('nav:toggleSearch');
 		},
 		

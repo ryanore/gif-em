@@ -2,7 +2,7 @@
 define(['jquery'],
 function($){
 	var Utils = function(){
-		this.clickType = this.isTouch() ? 'click' : 'mousedown';
+		this.clickEvt = this.isTouch() ? 'touchstart' : 'click';
 	}
 	
 	Utils.prototype = {
@@ -15,7 +15,8 @@ function($){
 			}
 		},
 		isTouch: function(){
-			return true;
+			return 'ontouchstart' in window // works on most browsers 
+			      || 'onmsgesturechange' in window; // works on ie10
 		}
     };
 

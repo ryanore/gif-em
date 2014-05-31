@@ -1,0 +1,23 @@
+#create-msg{
+	.cta-find-a-gif{
+		@include brandCta();
+		margin-top: 10px;
+		float: left;
+		width: 45%;
+	}
+
+	input[type="submit"]{
+		@include cta($white, $brand2nd, $brand2ndHL, $headingFont);
+		margin-top: 10px;
+		float: right;
+		width: 45%;
+	}
+
+	#textMessage{
+		padding: 10px;
+		height: 75px;
+	}
+	
+}
+
+

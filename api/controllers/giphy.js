@@ -70,11 +70,13 @@ exports.trending = function(req, res){
 /*
 *	Search Giphy API
 *	https://github.com/Giphy/GiphyAPI
+*	http://localhost:3000/giphy/search/fat%20cats&limit=10&offset=0
 */
 exports.search = function(req, res) {
+	console.log( req.query );
 	var terms = req.params.terms.toLowerCase().replace(/[^a-z0-9]+/g,'+');
-	var offset = req.params.offset || 0;
-	var limit = req.params.limit || 10;
+	var offset = req.query.offset || 0;
+	var limit = req.query.limit || 10;
 	var requestString = '/v1/gifs/search?'
 		+ "q=" + terms 
 		+ "&offset="+offset

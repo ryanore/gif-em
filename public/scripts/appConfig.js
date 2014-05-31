@@ -25,7 +25,8 @@ require.config({
 		messageTemplate:'templates/messageTemplate.ejs',
 		allMessagesTemplate:'templates/allMessagesTemplate.ejs',
 		createMessageTemplate:'templates/createMessageTemplate.ejs',
-		searchGiphyTemplate:'templates/searchGiphyTemplate.ejs'
+		searchGiphyTemplate:'templates/searchGiphyTemplate.ejs',
+		gifListTemplate:'templates/gifListTemplate.ejs'
 	},
     shim: { }
 });

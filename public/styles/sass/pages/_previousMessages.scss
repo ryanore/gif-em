@@ -1,0 +1,13 @@
+.msg-list li{
+	@extend %link;
+}
+
+.view-message-cta{
+	span{
+		display: inline-block;
+	}
+	.date{
+		width: 100px;
+		padding: 10px 0;
+	}
+}

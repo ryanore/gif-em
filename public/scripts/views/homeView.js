@@ -20,7 +20,20 @@ function(
 		tagName: 'section',
 		className: 'page',
 		id: 'home',
-
+		
+		events: function() {
+	        var events = {};
+			events[ utils.clickEvt+ ' .cta'] =  'navigate';
+	        return events;
+	    },
+	
+		navigate: function(e){
+			var nav = $(e.target).data('nav');
+			setTimeout(function(){
+				Backbone.Events.trigger(nav);
+			},300);
+		},
+		
 		initialize:function () {
 			this.render();
 		},

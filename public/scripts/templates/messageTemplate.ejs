@@ -1,10 +1,12 @@
-<h1>Dear <%= recipient %>,</h1>
-<p id="message-body">Now that I have your attention,
-	<br>
-	<%= textMessage %>
-</p>
-<p>Sincerely,
-	<br>
-	<%= sender %>
-</p>
-<div class="pagepadding"></div>
+<div class="msg-container black-on-white" style="background-image: url('images/<%= imgUrl %>');">
+	<div  class="msg-body">
+		<div class="inner">
+				<h1 data-fade=".25">Hey <%=recipient %>, Now that I have your attention,</h1>
+				<p data-fade="1">	<%= textMessage %></p>
+				<br>
+				<p data-fade="2">Sincerely,
+					<%= sender %>
+				</p>
+			</div>
+	</div><!-- .msg-body -->
+</div>

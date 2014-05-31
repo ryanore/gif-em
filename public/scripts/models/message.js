@@ -10,14 +10,26 @@ function($, _, Backbone){
 			sender: '',
 			textMessage: '',
 			public: true,
-			imgUrl: '/images/placeholder.gif',
+			imgUrl: 'placeholder.gif',
 			createdAt: new Date()
-			
 		},
-		
+	
+	
 		initialize: function () {
 		},
 
+		
+		formatDate: function(){
+			var year = new Date(this.get('createdAt'));
+			return year.toLocaleDateString();
+		},
+		
+		toJSON: function() {
+		    var a = _(this.attributes).clone();
+		    a.formattedDate = this.formatDate();
+		    return a;
+		},
+	
 		validate: function(attrs) {
 			var errors = [];
 		    if (!attrs.recipient) {

@@ -1,0 +1,68 @@
+
+/*
+*  SEARCH GIPHYS
+*/
+.search-giphy-container{
+	@include transition-property(bottom);
+  @include transition-duration(.3s);
+  @include transition-timing-function(ease-in);
+	-webkit-transform: translate3d(0, 0, 0);
+	bottom: 100%;
+	left:0;
+	padding: 0 5%;
+	background: $brand;
+	width: 100%;
+	height: 100%;
+	position: fixed;		
+	
+	.page{
+		width: 100%;
+		overflow-y: scroll;
+		height: 100%;
+	}
+	
+	
+	&.show{
+		bottom: 0;
+	}
+	
+	form{
+		padding: 10px 0 0 0;
+	}
+	.scroll{
+		@include scrollPanel();
+		height: 80%;
+		width: 100%;
+	}
+	
+	.footer{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		padding: 10px 5%;
+		background: $brand;
+		width: 100%;
+		height: 60px;
+		
+	}
+	.cancel{
+		@include cta($brand, $white, $brandHL, $bodyFont);
+	}
+	
+}
+
+
+.view-giphy-thumb {
+	padding: 10px 0;
+	background-color: #222;
+	border: 2px solid #000;
+	border-top: none;
+	div{
+		width: 100%;
+		height: 200px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+}
+
