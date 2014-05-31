@@ -76,6 +76,7 @@ function(
 		searchSubmit: function(e){
 			e.preventDefault();
 			var terms = $('input[type="search"]').val();
+			this.scroll.html('');
 			this.collection.updateSearch(terms);
 			this.loadResults();
 		},
