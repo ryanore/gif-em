@@ -80,12 +80,12 @@ header{
 
 /* MAIN LOADING INDICATOR*/
 #loading{
-	transition: .6s;
+	@include transition(opacity 0.5s ease);
 	opacity: 0;
 	position: fixed;
 	z-index: 10000;
 	left: 50%;
-	top: 50%;
+	top: -150%;
 	margin-left: -30px;
 	margin-top: -30px;
 	width: 60px;
@@ -93,12 +93,14 @@ header{
 	background: #fff;
 	border-radius: 5px;
 	border: 2px solid #ccc;
-	#gif{
-		width: 100%;
-		height:100%;
-		background: transparent url(../images/loading.gif ) no-repeat center center;
+	background: #fff url(../images/loading.gif ) no-repeat center center;
+	background-size: 50%;
+	&.loading{
+		top: 50%;
+		opacity: 1;
 	}
 }
+
 
 
 /* PAGES */

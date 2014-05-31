@@ -56,8 +56,21 @@ define([
 		Backbone.Events.on('nav:message', message);
 		Backbone.Events.on('nav:newMessage', newMessage);
 		Backbone.Events.on('nav:toggleSearch', toggleSearch);
+		Backbone.Events.on('network', handleNetwork);
 		Backbone.history.start();
 	};
+	
+	var handleNetwork = function(status){
+		switch(status){
+			case 'busy': 
+				mainView.showLoader();
+				return;
+			
+			case 'complete': 
+				mainView.hideLoader();
+				return;
+		}
+	}
 
 
 	/**********************

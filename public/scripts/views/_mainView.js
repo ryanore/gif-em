@@ -26,6 +26,7 @@ function(
 		mainContent: {},
 		currentView: null,
 		searchView: null,
+		loading: null,
 		
 		events: function() {
 	        var events = {};
@@ -39,6 +40,7 @@ function(
 			this.render();
 			this.mainContent = this.$el.find('#content');
 			this.nav = $('.main-nav');			
+			this.loading = $('#loading');			
 		},
 		
 		/*  MAIN NAVIGATION  */
@@ -65,6 +67,14 @@ function(
 				this.currentView.close();
 			}
 			this.mainContent.stop().animate({opacity:0},200, clback );
+		},
+		
+		showLoader: function(){
+			this.loading.addClass('loading');
+		},
+		
+		hideLoader: function(){
+			this.loading.removeClass('loading');
 		},
 		
 		toggleSearch: function( clback ){

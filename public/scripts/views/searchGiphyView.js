@@ -26,7 +26,8 @@ function(
 		template: _.template(searchGiphyTemplate),
 		container: null,
 		loading: false,
-	    
+	    scroll: {},
+		last:null,
 		
 		initialize: function () {
 			this.render();
@@ -44,6 +45,7 @@ function(
 			this.$el.html(this.template());
 			this.container = $('.search-giphy-container');
 			this.container.html(this.$el);
+			this.scroll = $(".scroll");
 		},
 		
 		transition: function(){
@@ -63,31 +65,36 @@ function(
 		},
 		
 		handleScroll: function(){
-			var triggerPoint = utils.isTouch? 10 : 10;
-	        if( !this.loading && this.el.scrollTop + this.el.clientHeight + triggerPoint > this.el.scrollHeight ) {
+			var hgt = this.scroll.height();
+			var thumbY = (this.last.offset().top);
+			if( thumbY <= hgt ){
 				this.collection.pageUp();
-				this.fetchGiphy();
-	        }
+				this.loadResults();
+			}
 		},
 		
 		searchSubmit: function(e){
 			e.preventDefault();
 			var terms = $('input[type="search"]').val();
 			this.collection.updateSearch(terms);
-			this.fetchGiphy();
+			this.loadResults();
 		},
 		
-		fetchGiphy: function(){
+		loadResults: function(){
+			if( this.loading) {
+				return false;
+			}
 			var self = this;
-			self.loading = true;
-			this.collection.fetch().success(function(){
-				var thms = self.collection.toJSON();
-	          	$('.scroll').append(_.template(gifListTemplate, {thumbs: thms}));
+			this.loading = true;
+			Backbone.Events.trigger('network','busy');
+			this.collection.fetch().success(function(thms){
+	          	self.scroll.append(_.template(gifListTemplate, {thumbs: thms.images}));
+				self.last = $(".view-giphy-thumb:last-child");
 	          	self.loading = false;
+				Backbone.Events.trigger('network','complete');
 			});	
 		}
     });
 
 	return  SearchGiphy;
-	
 });
