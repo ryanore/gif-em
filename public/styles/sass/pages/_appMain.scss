@@ -6,7 +6,7 @@ body{
 
 *{
   @include box-sizing(border-box);
-  @include user-select(none);
+/*  @include user-select(none);*/
 }
 
 h1{
