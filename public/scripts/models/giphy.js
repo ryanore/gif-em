@@ -10,9 +10,7 @@ function($, _, Backbone){
 			original:{},
 			small:{}
 		},
-		initialize: function () {
-			console.log('init giphy model')
-		}
+		initialize: function () {	}
     });
 
 	return Giphy;

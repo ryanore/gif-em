@@ -58,7 +58,6 @@ function(
 		},
 
 		submitMessage: function(e){
-			e.preventDefault();
 			var self = this;
 			var formData = {
 				recipient:$('input[name="recipient"]').val(),
@@ -81,6 +80,8 @@ function(
 			});
 
 			this.model.save( formData, formResponse);
+			e.preventDefault();
+			
 		},
 		
 		

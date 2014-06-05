@@ -51,6 +51,7 @@ function(
 		handleNav: function(e){
 			this.nav.toggleClass('extended');
 			var nav = $(e.target).data('nav');
+			Backbone.Events.trigger('network','busy');
 			setTimeout(function(){
 				Backbone.Events.trigger(nav);
 			},300);
@@ -59,10 +60,12 @@ function(
 		
 		/* APP ROUTING,  PAGE TRANSITION */
 		setContent: function(view){
+			Backbone.Events.trigger('network','complete');
 			this.mainContent.html(view.el).stop().animate({opacity:1}, 200,function(){});
 		},
 		
 		transition: function( clback ){
+			Backbone.Events.trigger('network','busy');
 			if (this.currentView){
 				this.currentView.close();
 			}
