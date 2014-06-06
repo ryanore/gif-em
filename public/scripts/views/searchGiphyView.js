@@ -5,8 +5,7 @@ define([
 	'utils',
 	'GiphyCollection',
 	'GiphyView',
-	'text!searchGiphyTemplate',
-	'text!gifListTemplate'
+	'text!searchGiphyTemplate'
 ],
 function(
 	$,
@@ -15,8 +14,7 @@ function(
 	utils,
 	GiphyCollection,
 	GiphyView,
-	searchGiphyTemplate,
-	gifListTemplate
+	searchGiphyTemplate
 ){
 
 	'use strict';

@@ -31,9 +31,7 @@
 }
 @mixin inputText($color, $font) {
 	@extend %inputText;
-	@include transition-property(border-color);
-  @include transition-duration(.4s);
-  @include transition-timing-function(ease-in);
+	@include single-transition(border-color, .4s, ease-in);
 	font-family: $font;
 	background: $color;
 }
@@ -46,8 +44,7 @@
 /* LINKS */
 
 %link {
-	@include transition-property(background-color);
-  @include transition-duration(.15s);
+	@include single-transition(background-color, .15s, ease-in);
 	font-family: $bodyFont;
 	text-decoration: none;
 	outline: none;
@@ -63,8 +60,7 @@
 /* BUTTONS */
 
 %btn {
-	@include transition-property(background-color);
-  @include transition-duration(.15s);
+	@include single-transition(background-color, .15s, ease-in);
 	font-family: $headingFont;
 	border: none;
 	outline: none;
@@ -75,7 +71,7 @@
 	text-align: center;
 }
 
-@mixin cta($color, $bgColor, $bgColorHover, $font) {
+@mixin cta($color, $bgColor, $bgColorHover, $font: $headingFont) {
 	@extend %btn;
 	@include border-radius(4px);
 	color: $color;
@@ -97,5 +93,6 @@
 
 @mixin scrollPanel(){
 	overflow-y: scroll; 
+	overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }

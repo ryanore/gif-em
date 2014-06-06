@@ -42,9 +42,7 @@
 }
 [data-fade]{
 	opacity: 0;
-	@include transition-property(opacity);
-  @include transition-timing-function(ease-in);
-	@include transition-duration(.25s);
+	@include single-transition(opacity, .25s, ease-in);
 }
 [data-fade].show{
 	opacity: 1;

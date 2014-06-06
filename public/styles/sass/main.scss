@@ -1,6 +1,8 @@
 /*COLORS*/
 $bodyColor: #666;
-$white: #fff;
+$white: rgb(255,255,255);			//#fff;
+$black: rgb(0,0,0);		 				//#000;
+$dark: rgb(34,34,34);					//#222
 $brand: rgb(21,123,178);			//#157BB2
 $brandHL: rgb(0,166,255);			//#00A6FF
 $brand2nd: rgb(234,132,0); 		//#FF8F00
@@ -15,8 +17,9 @@ $desktopWide: 1140px;
 
 /*FONTS*/
 $bodyFont: sans-serif;
-$headingFont: 'Chelsea Market', cursive;
-$formFont: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headingFont: 'Chelsea Market', Impact, Arial;
+$formFont: Arial, sans-serif;
+
 
 /*Layout*/
 $pagePadding: 20px 5%;

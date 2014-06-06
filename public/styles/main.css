@@ -335,12 +335,12 @@ p {
 
 /* line 16, sass/global/_typography.scss */
 h1, h2 {
-  font-family: "Chelsea Market", cursive;
+  font-family: "Chelsea Market", Impact, Arial;
 }
 
 /* line 19, sass/global/_typography.scss */
 p {
-  font-family: "Chelsea Market", cursive;
+  font-family: "Chelsea Market", Impact, Arial;
   font-size: 1.5em;
 }
 
@@ -362,7 +362,7 @@ h1, h2 {
   line-height: 1.2;
   color: #157bb2;
   text-transform: uppercase;
-  font-family: "Chelsea Market", cursive;
+  font-family: "Chelsea Market", Impact, Arial;
 }
 
 /* VENDOR PREFIXES*/
@@ -385,16 +385,12 @@ form textarea {
 }
 
 /* LINKS */
-/* line 48, sass/global/_mixins.scss */
+/* line 46, sass/global/_mixins.scss */
 .msg-list li {
-  -webkit-transition-property: background-color;
-  -moz-transition-property: background-color;
-  -o-transition-property: background-color;
-  transition-property: background-color;
-  -webkit-transition-duration: 0.15s;
-  -moz-transition-duration: 0.15s;
-  -o-transition-duration: 0.15s;
-  transition-duration: 0.15s;
+  -webkit-transition: background-color 0.15s ease-in;
+  -moz-transition: background-color 0.15s ease-in;
+  -o-transition: background-color 0.15s ease-in;
+  transition: background-color 0.15s ease-in;
   font-family: sans-serif;
   text-decoration: none;
   outline: none;
@@ -403,26 +399,22 @@ form textarea {
   cursor: pointer;
   color: #157bb2;
 }
-/* line 58, sass/global/_mixins.scss */
+/* line 55, sass/global/_mixins.scss */
 .msg-list li:hover, .msg-list li:active, .msg-list li:visited {
   color: #00a6ff;
 }
 
 /* BUTTONS */
-/* line 65, sass/global/_mixins.scss */
+/* line 62, sass/global/_mixins.scss */
 form button,
 form input[type="submit"],
 form input[type="reset"],
-form input[type="button"], #create-msg .cta-find-a-gif, #create-msg input[type="submit"], .search-giphy-container .cancel {
-  -webkit-transition-property: background-color;
-  -moz-transition-property: background-color;
-  -o-transition-property: background-color;
-  transition-property: background-color;
-  -webkit-transition-duration: 0.15s;
-  -moz-transition-duration: 0.15s;
-  -o-transition-duration: 0.15s;
-  transition-duration: 0.15s;
-  font-family: "Chelsea Market", cursive;
+form input[type="button"], #create-msg .cta-find-a-gif, #create-msg input[type="submit"], .search-giphy-container .cancel, .view-giphy-thumb button {
+  -webkit-transition: background-color 0.15s ease-in;
+  -moz-transition: background-color 0.15s ease-in;
+  -o-transition: background-color 0.15s ease-in;
+  transition: background-color 0.15s ease-in;
+  font-family: "Chelsea Market", Impact, Arial;
   border: none;
   outline: none;
   margin: 0;
@@ -454,7 +446,7 @@ form legend {
 form label {
   color: #157bb2;
   font-weight: bold;
-  font-family: "Chelsea Market", cursive;
+  font-family: "Chelsea Market", Impact, Arial;
   text-transform: uppercase;
 }
 /* line 26, sass/global/_forms.scss */
@@ -463,18 +455,10 @@ form input[type="password"],
 form input[type="search"],
 form input[type="email"],
 form textarea {
-  -webkit-transition-property: border-color;
-  -moz-transition-property: border-color;
-  -o-transition-property: border-color;
-  transition-property: border-color;
-  -webkit-transition-duration: 0.4s;
-  -moz-transition-duration: 0.4s;
-  -o-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  -webkit-transition-timing-function: ease-in;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
+  -webkit-transition: border-color 0.4s ease-in;
+  -moz-transition: border-color 0.4s ease-in;
+  -o-transition: border-color 0.4s ease-in;
+  transition: border-color 0.4s ease-in;
   font-family: sans-serif;
   background: white;
   /*		background: rgba($brand2ndHL, .1);*/
@@ -508,7 +492,7 @@ form input[type="button"] {
   font-size: 1em;
   -webkit-appearance: none;
 }
-/* line 83, sass/global/_mixins.scss */
+/* line 79, sass/global/_mixins.scss */
 form button:hover,
 form input[type="submit"]:hover,
 form input[type="reset"]:hover,
@@ -715,14 +699,14 @@ h1 strong {
 
 /* line 2, sass/pages/_newmessage.scss */
 #create-msg .cta-find-a-gif {
-  font-family: "Chelsea Market", cursive;
+  font-family: "Chelsea Market", Impact, Arial;
   color: white;
   background-color: #157bb2;
   margin-top: 10px;
   float: left;
   width: 45%;
 }
-/* line 93, sass/global/_mixins.scss */
+/* line 89, sass/global/_mixins.scss */
 #create-msg .cta-find-a-gif:hover {
   background-color: #00a6ff;
 }
@@ -739,7 +723,7 @@ h1 strong {
   float: right;
   width: 45%;
 }
-/* line 83, sass/global/_mixins.scss */
+/* line 79, sass/global/_mixins.scss */
 #create-msg input[type="submit"]:hover {
   background-color: #ff9b19;
 }
@@ -754,18 +738,10 @@ h1 strong {
 */
 /* line 5, sass/pages/_searchGiphy.scss */
 .search-giphy-container {
-  -webkit-transition-property: bottom;
-  -moz-transition-property: bottom;
-  -o-transition-property: bottom;
-  transition-property: bottom;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-in;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
+  -webkit-transition: bottom 0.3s ease-in;
+  -moz-transition: bottom 0.3s ease-in;
+  -o-transition: bottom 0.3s ease-in;
+  transition: bottom 0.3s ease-in;
   -webkit-transform: translate3d(0, 0, 0);
   bottom: 100%;
   left: 0;
@@ -775,28 +751,28 @@ h1 strong {
   height: 100%;
   position: fixed;
 }
-/* line 17, sass/pages/_searchGiphy.scss */
+/* line 15, sass/pages/_searchGiphy.scss */
 .search-giphy-container.show {
   bottom: 0;
 }
-/* line 20, sass/pages/_searchGiphy.scss */
+/* line 18, sass/pages/_searchGiphy.scss */
 .search-giphy-container .search-giphy {
   width: 100%;
-  overflow-y: scroll;
   height: 100%;
 }
-/* line 25, sass/pages/_searchGiphy.scss */
+/* line 22, sass/pages/_searchGiphy.scss */
 .search-giphy-container form {
   padding: 10px 0 0 0;
 }
-/* line 28, sass/pages/_searchGiphy.scss */
+/* line 25, sass/pages/_searchGiphy.scss */
 .search-giphy-container .scroll {
   overflow-y: scroll;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   height: 80%;
   width: 100%;
 }
-/* line 33, sass/pages/_searchGiphy.scss */
+/* line 30, sass/pages/_searchGiphy.scss */
 .search-giphy-container .footer {
   position: absolute;
   bottom: 0;
@@ -806,7 +782,7 @@ h1 strong {
   width: 100%;
   height: 60px;
 }
-/* line 43, sass/pages/_searchGiphy.scss */
+/* line 40, sass/pages/_searchGiphy.scss */
 .search-giphy-container .cancel {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -816,24 +792,67 @@ h1 strong {
   color: #157bb2;
   background-color: white;
 }
-/* line 83, sass/global/_mixins.scss */
+/* line 79, sass/global/_mixins.scss */
 .search-giphy-container .cancel:hover {
   background-color: #00a6ff;
 }
 
-/* line 50, sass/pages/_searchGiphy.scss */
+/* line 47, sass/pages/_searchGiphy.scss */
 .view-giphy-thumb {
   padding: 10px 0;
-  background-color: #222;
+  background: #222222 url(../images/loading-small.gif) no-repeat center center;
   border: 2px solid #000;
   border-top: none;
-  /*	div{*/
+  position: relative;
+}
+/* line 53, sass/pages/_searchGiphy.scss */
+.view-giphy-thumb .image {
   width: 100%;
   height: 200px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  /*	}*/
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in;
+  -moz-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+/* line 62, sass/pages/_searchGiphy.scss */
+.view-giphy-thumb .image.loading {
+  opacity: .3;
+}
+/* line 65, sass/pages/_searchGiphy.scss */
+.view-giphy-thumb button {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  color: white;
+  background-color: #ea8400;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
+  position: absolute;
+  font-size: 14px;
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+  right: -100%;
+  opacity: 0;
+  padding: 0;
+  border: 2px solid #fff;
+}
+/* line 79, sass/global/_mixins.scss */
+.view-giphy-thumb button:hover {
+  background-color: #ff9b19;
+}
+/* line 78, sass/pages/_searchGiphy.scss */
+.view-giphy-thumb button.show {
+  right: 5px;
+  bottom: 5px;
+  opacity: 1;
 }
 
 /* line 6, sass/pages/_previousMessages.scss */
@@ -895,26 +914,18 @@ h1 strong {
 /* line 43, sass/pages/_message.scss */
 [data-fade] {
   opacity: 0;
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-timing-function: ease-in;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-  -webkit-transition-duration: 0.25s;
-  -moz-transition-duration: 0.25s;
-  -o-transition-duration: 0.25s;
-  transition-duration: 0.25s;
+  -webkit-transition: opacity 0.25s ease-in;
+  -moz-transition: opacity 0.25s ease-in;
+  -o-transition: opacity 0.25s ease-in;
+  transition: opacity 0.25s ease-in;
 }
 
-/* line 49, sass/pages/_message.scss */
+/* line 47, sass/pages/_message.scss */
 [data-fade].show {
   opacity: 1;
 }
 
-/* line 52, sass/pages/_message.scss */
+/* line 50, sass/pages/_message.scss */
 [data-fade=".25"] {
   -webkit-transition-delay: 0.25s;
   -moz-transition-delay: 0.25s;
@@ -922,7 +933,7 @@ h1 strong {
   transition-delay: 0.25s;
 }
 
-/* line 53, sass/pages/_message.scss */
+/* line 51, sass/pages/_message.scss */
 [data-fade=".50"] {
   -webkit-transition-delay: 0.5s;
   -moz-transition-delay: 0.5s;
@@ -930,7 +941,7 @@ h1 strong {
   transition-delay: 0.5s;
 }
 
-/* line 54, sass/pages/_message.scss */
+/* line 52, sass/pages/_message.scss */
 [data-fade=".75"] {
   -webkit-transition-delay: 0.75s;
   -moz-transition-delay: 0.75s;
@@ -938,7 +949,7 @@ h1 strong {
   transition-delay: 0.75s;
 }
 
-/* line 55, sass/pages/_message.scss */
+/* line 53, sass/pages/_message.scss */
 [data-fade="1"] {
   -webkit-transition-delay: 1s;
   -moz-transition-delay: 1s;
@@ -946,7 +957,7 @@ h1 strong {
   transition-delay: 1s;
 }
 
-/* line 56, sass/pages/_message.scss */
+/* line 54, sass/pages/_message.scss */
 [data-fade="1.25"] {
   -webkit-transition-delay: 1.25s;
   -moz-transition-delay: 1.25s;
@@ -954,7 +965,7 @@ h1 strong {
   transition-delay: 1.25s;
 }
 
-/* line 57, sass/pages/_message.scss */
+/* line 55, sass/pages/_message.scss */
 [data-fade="1.5"] {
   -webkit-transition-delay: 1.5s;
   -moz-transition-delay: 1.5s;
@@ -962,7 +973,7 @@ h1 strong {
   transition-delay: 1.5s;
 }
 
-/* line 58, sass/pages/_message.scss */
+/* line 56, sass/pages/_message.scss */
 [data-fade="1.75"] {
   -webkit-transition-delay: 1.75s;
   -moz-transition-delay: 1.75s;
@@ -970,7 +981,7 @@ h1 strong {
   transition-delay: 1.75s;
 }
 
-/* line 59, sass/pages/_message.scss */
+/* line 57, sass/pages/_message.scss */
 [data-fade="2"] {
   -webkit-transition-delay: 2s;
   -moz-transition-delay: 2s;

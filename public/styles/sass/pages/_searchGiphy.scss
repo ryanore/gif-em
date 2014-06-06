@@ -3,9 +3,7 @@
 *  SEARCH GIPHYS
 */
 .search-giphy-container{
-	@include transition-property(bottom);
-  @include transition-duration(.3s);
-  @include transition-timing-function(ease-in);
+	@include single-transition(bottom, .3s, ease-in);
 	-webkit-transform: translate3d(0, 0, 0);
 	bottom: 100%;
 	left:0;
@@ -19,7 +17,6 @@
 	}	
 	.search-giphy{
 		width: 100%;
-		overflow-y: scroll;
 		height: 100%;
 	}
 	form{
@@ -49,15 +46,39 @@
 
 .view-giphy-thumb {
 	padding: 10px 0;
-	background-color: #222;
+	background: $dark url(../images/loading-small.gif) no-repeat center center;
 	border: 2px solid #000;
 	border-top: none;
-/*	div{*/
+	position: relative;
+	.image{
 		width: 100%;
 		height: 200px;
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center center;
-/*	}*/
+		opacity: 1;
+		@include single-transition(opacity, .3s, ease-in);
+	}
+	.image.loading{
+		opacity: .3;
+	}
+	button{
+		@include cta($white, $brand2nd, $brand2ndHL);
+		@include box-shadow( 0 3px 3px rgba(0, 0, 0, 0.6));
+		position: absolute;
+		font-size: 14px;
+		height: 36px;
+		width: 36px;
+		border-radius: 18px;
+		right: -100%;
+		opacity: 0;
+		padding:0;
+		border: 2px solid #fff;
+	}
+	button.show{
+		right: 5px;
+		bottom: 5px;
+		opacity: 1;
+	}
 }
 
