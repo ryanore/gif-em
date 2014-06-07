@@ -36,7 +36,6 @@ function(
 	    },
 	   
 		initialize:function () {
-			var self = this;
 			this.render();
 			this.mainContent = this.$el.find('#content');
 			this.nav = $('.main-nav');			

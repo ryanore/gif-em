@@ -5,6 +5,7 @@ require.config({
 		underscore:'../bower_components/underscore/underscore',
 		text:'../bower_components/requirejs-text/text',
 		utils:'lib/utils',
+		GiphyLoader:'lib/giphyLoader',
 
 		MessageModel:'models/message',
 		GiphyModel:'models/giphy',

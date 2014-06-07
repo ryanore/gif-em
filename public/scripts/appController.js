@@ -81,6 +81,7 @@ define([
 			currentMessage = new Message();
 			newMessage();
 		}
+		
 		currentMessage.set({imageData: giphy.toJSON()});
 		toggleSearch();
 	}
@@ -103,7 +104,6 @@ define([
 	};
 
 	var newMessage = function () {
-		var self = this;
 		mainView.transition(function(){
 			var view = new CreateMessageView( { model: currentMessage } );
 			mainView.setContent( view );

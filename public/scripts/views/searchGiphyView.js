@@ -25,12 +25,13 @@ function(
 		template: _.template(searchGiphyTemplate),
 		container: null,
 	    scroll: null,
+	    scrollContainer: null,
 		last:null,
 		loading: false,
 		
 		initialize: function () {
 			this.render();
-			this.scroll.on('scroll', this.handleScroll.bind(this))
+			this.scrollContainer.on('scroll', this.handleScroll.bind(this))
 			this.collection.on('add', this.addOne.bind(this));
 		},
 	
@@ -46,6 +47,7 @@ function(
 			this.container = $('.search-giphy-container');
 			this.container.html(this.$el);
 			this.scroll = $(".scroll");
+			this.scrollContainer = $(".scrollContainer");
 		},
 		
 		transition: function(){ 
@@ -62,9 +64,8 @@ function(
 		},
 		
 		handleScroll: function(){
-			var hgt = this.scroll.height();
+			var hgt = this.scrollContainer.height();
 			var thumbY = (this.last.offset().top);
-		
 			if( thumbY <= hgt ){
 				this.collection.pageUp();
 				this.loadResults();

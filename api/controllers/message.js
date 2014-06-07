@@ -16,6 +16,7 @@ exports.create = function(req, res) {
 	msg.sender = req.body.sender;
 	msg.recipient = req.body.recipient;
 	msg.textMessage = req.body.textMessage;
+	msg.brightness = req.body.brightness || 0;
 	msg.imageData = req.body.imageData || null;
 	msg.privacy = req.body.privacy || 0;
 	msg.createdAt = new Date();

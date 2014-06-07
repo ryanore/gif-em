@@ -9,6 +9,7 @@ function($, _, Backbone){
 			recipient: '',
 			sender: '',
 			textMessage: '',
+			brightness: 0,
 			public: true,
 			imageData: {},
 			createdAt: new Date()

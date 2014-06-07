@@ -2,7 +2,7 @@
 
 		.cta-find-a-gif{
 			@include border-radius(5px);
-			height: 50px;
+			height: 70px;
 			width: 45%;
 			float: left;
 			background-size: cover;
@@ -12,12 +12,17 @@
 		}
 		.cta-find-a-gif.found{
 			@include border-radius(5px);
-			height: 80px;
+			color: #fff;
+			font-family: $headingFont;
+			font-weight: bold;
+			font-size: 1.3em;
+			height: 50px;
 			width: 45%;
 			float: left;
 			background-size: contain;
 			background-position: center center;
 			background-repeat: no-repeat;
+			background-color: $dark;
 			border: 2px dotted #aaa;
 			text-align: center;
 		}

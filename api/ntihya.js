@@ -3,6 +3,7 @@ var Ntihya = (function(){
 	
 	var Messages = require('./controllers/message');
 	var Giphy = require('./controllers/giphy');
+	var Media = require('./controllers/media');
 	
 	return {
 	

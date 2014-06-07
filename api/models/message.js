@@ -5,6 +5,7 @@ var MessageSchema   = new Schema({
 	sender: String,
 	recipient: String,
 	textMessage: String,
+	brightness: Number,
 	imageData: Object,
 	privacy: Number, 
 	createdAt: Date
