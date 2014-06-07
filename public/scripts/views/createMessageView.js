@@ -26,26 +26,41 @@ function(
 		clickEvt: utils.clickType,
 
         initialize: function () {
-		    _.bindAll(this, 'render');
+		    _.bindAll(this, 'render', 'updateImg');
 			this.render();
+			this.model.bind('change:imageData', this.updateImg);
 		},
 
 	    events: function() {
 	        var events = {};
 			events[ 'submit #new-msg-form'] =  'submitMessage';
+			events['change #new-msg-form'] = 'handleChange';
 			events[ utils.clickEvt+ ' .cta-find-a-gif'] =  'toggleSearch';
 	        return events;
 	    },
 	
+		handleChange: function(e){
+			var prop = e.target.name;
+			var val = e.target.value;
+			this.model.set({prop: val});
+		},
+	
+		updateImg: function(){
+			var img = this.model.get('imageData');
+		   $('.cta-find-a-gif').addClass('found').css('background-image','url("'+img.small.url+'")');
+		},
+		
 		showErrors: function( error ){
 			_.each( error , function(e){
 				utils.log( e.message );
 			});
 		},
 		
-		navigateToMessage: function(e){
-			var id = $(e.currentTarget).data('id');
-			Backbone.Events.trigger('nav:message', id);
+		navigateToMessage: function(){
+			var id = this.model.get('_id');
+			setTimeout(function(){
+				Backbone.Events.trigger('nav:message', id);
+			}, 2000);
 		},
 		
 		toggleSearch: function(e){
@@ -53,12 +68,9 @@ function(
 			Backbone.Events.trigger('nav:toggleSearch');
 		},
 		
-		showSuccess: function(){
-			this.$el.find('textarea').val('');
-		},
-
 		submitMessage: function(e){
 			var self = this;
+			
 			var formData = {
 				recipient:$('input[name="recipient"]').val(),
 				textMessage:$('textarea[name="textMessage"]').val(),
@@ -68,7 +80,8 @@ function(
 			var formResponse = {
 				success: function(data){
 					utils.log(data);
-					self.showSuccess();
+					$('.ui-message').fadeIn();
+					self.navigateToMessage();
 				},
 				error: function(model, err){
 					utils.log('Server Error: something went wrong trying to save  :  ' + err.responseText  );
@@ -79,14 +92,14 @@ function(
 				self.showErrors(error);
 			});
 
-			this.model.save( formData, formResponse);
+			self.model.save( formData, formResponse);
 			e.preventDefault();
 			
 		},
 		
 		
 		render: function () {
-			$(this.el).html(this.template());
+			this.$el.html(this.template(this.model.toJSON()));
 			this.$frm = this.$el.find('form');
 			return this;
 		}

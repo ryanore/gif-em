@@ -26,37 +26,40 @@ h1 strong{
 		background-image: url(../images/new-white.png);
 	}
 }*/
-
-.description{
-	text-align: center;
-}
-.footer{
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
+#home{
 	
-	.cta{
-		width: 50%;
-		float: left;
-		margin: 0;
-		height: 45px;
-		border: none;
+	.description{
 		text-align: center;
-		color: $white;
-		padding: 3px 0 0 0;
-		font-size: .7em;
-		cursor: pointer;
-		&.search{
-			border-right:1px solid $white;
-			background: $brand2nd url(../images/search-white.png) no-repeat center bottom;
-			background-size: 30px;
-		}
-		&.new{
-			border-left:1px solid $white;
-			background: $brand2nd url(../images/new-white.png) no-repeat center bottom;
-			background-size: 30px;
+	}
+	.footer{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	
+		.cta{
+			width: 50%;
+			float: left;
+			margin: 0;
+			height: 45px;
+			border: none;
+			text-align: center;
+			color: $white;
+			padding: 3px 0 0 0;
+			font-size: .7em;
+			cursor: pointer;
+			&.search{
+				border-right:1px solid $white;
+				background: $brand2nd url(../images/search-white.png) no-repeat center bottom;
+				background-size: 30px;
+			}
+			&.new{
+				border-left:1px solid $white;
+				background: $brand2nd url(../images/new-white.png) no-repeat center bottom;
+				background-size: 30px;
 
+			}
 		}
 	}
+
 }

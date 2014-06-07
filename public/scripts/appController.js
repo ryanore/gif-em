@@ -31,6 +31,8 @@ define([
 
 	var mainView = {};
 	
+	var currentMessage = new Message();
+	
 	// Decoupled Router, minimal concerns
 	var AppRouter = Backbone.Router.extend({
 		routes: {
@@ -56,6 +58,7 @@ define([
 		Backbone.Events.on('nav:message', message);
 		Backbone.Events.on('nav:newMessage', newMessage);
 		Backbone.Events.on('nav:toggleSearch', toggleSearch);
+		Backbone.Events.on('message:giphySelected', giphySelected);
 		Backbone.Events.on('network', handleNetwork);
 		Backbone.history.start();
 	};
@@ -70,7 +73,23 @@ define([
 				mainView.hideLoader();
 				return;
 		}
+	};
+	
+	
+	var giphySelected = function(giphy){
+		if( Backbone.history.fragment !== "messages/new"){
+			currentMessage = new Message();
+			newMessage();
+		}
+		currentMessage.set({imageData: giphy.toJSON()});
+		toggleSearch();
 	}
+	
+	
+	var toggleSearch = function () {
+		mainView.toggleSearch(new Function());
+	};
+	
 
 
 	/**********************
@@ -84,8 +103,9 @@ define([
 	};
 
 	var newMessage = function () {
+		var self = this;
 		mainView.transition(function(){
-			var view = new CreateMessageView( { model: new Message() } );
+			var view = new CreateMessageView( { model: currentMessage } );
 			mainView.setContent( view );
 			router.navigate('messages/new');
 		});
@@ -111,11 +131,8 @@ define([
 		});
 	};
 
-	var toggleSearch = function () {
-		mainView.toggleSearch(new Function());
-	};
-	
 	return {
-		initialize: initialize
+		initialize: initialize,
+		router: AppRouter
 	};
 });

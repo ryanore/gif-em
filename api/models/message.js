@@ -5,7 +5,7 @@ var MessageSchema   = new Schema({
 	sender: String,
 	recipient: String,
 	textMessage: String,
-	imgUrl: String,
+	imageData: Object,
 	privacy: Number, 
 	createdAt: Date
 });

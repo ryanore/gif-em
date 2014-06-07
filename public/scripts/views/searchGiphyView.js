@@ -30,11 +30,11 @@ function(
 		
 		initialize: function () {
 			this.render();
+			this.scroll.on('scroll', this.handleScroll.bind(this))
+			this.collection.on('add', this.addOne.bind(this));
 		},
 	
 		events: function() {
-			$('.scroll').scroll(this.handleScroll.bind(this));
-			this.collection.on('add', this.addOne.bind(this));
 			var events = {};
 			events[ utils.clickEvt+ ' .cancel'] =  'toggleSearch';
 			events[ 'submit form'] =  'searchSubmit';
@@ -54,7 +54,6 @@ function(
 		
 		toggleSearch: function(e){
 			e.preventDefault();
-			
 			e.stopPropagation();
  			
 			setTimeout( function(){

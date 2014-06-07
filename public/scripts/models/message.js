@@ -10,7 +10,7 @@ function($, _, Backbone){
 			sender: '',
 			textMessage: '',
 			public: true,
-			imgUrl: 'placeholder.gif',
+			imageData: {},
 			createdAt: new Date()
 		},
 	
@@ -18,6 +18,10 @@ function($, _, Backbone){
 		initialize: function () {
 		},
 
+		setImageData: function(img){
+			var a = _(this.attributes).clone();
+			a.imageData = img;
+		},
 		
 		formatDate: function(){
 			var year = new Date(this.get('createdAt'));
@@ -40,6 +44,9 @@ function($, _, Backbone){
 		    }
 		    if (!attrs.textMessage) {
 		        errors.push({name: 'textMessage', message: 'Please add a message.'});
+		    }
+		    if (!attrs.imageData) {
+		        errors.push({name: 'imageData', message: 'Please add a GIF.'});
 		    }
 		    return errors.length > 0 ? errors : false;
 		}

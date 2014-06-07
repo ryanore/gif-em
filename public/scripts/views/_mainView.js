@@ -24,7 +24,7 @@ function(
 		el: 'body',
 		id: 'mainViewContainer',
 		mainContent: {},
-		currentView: null,
+		currentView: {},
 		searchView: null,
 		loading: null,
 		
@@ -62,11 +62,12 @@ function(
 		setContent: function(view){
 			Backbone.Events.trigger('network','complete');
 			this.mainContent.html(view.el).stop().animate({opacity:1}, 200,function(){});
+			this.currentView = view;
 		},
 		
 		transition: function( clback ){
 			Backbone.Events.trigger('network','busy');
-			if (this.currentView){
+			if (typeof this.currentView.close === 'function' ){
 				this.currentView.close();
 			}
 			this.mainContent.stop().animate({opacity:0},200, clback );

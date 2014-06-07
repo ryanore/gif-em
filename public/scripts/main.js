@@ -1,4 +1,3 @@
-
 require(["appConfig"], function() {
 	
 	'use strict';

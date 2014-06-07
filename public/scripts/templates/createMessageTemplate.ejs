@@ -5,25 +5,27 @@
 		<label for="sender">
 			Your Name: <dfn title="required">*</dfn>
 		</label>
-		<input id="sender"  name="sender" placeholder="Jon Doe" type="text"  />
+		<input id="sender"  name="sender" placeholder="Jon Doe" type="text"  value="<%=sender%>" />
 	</div>
 	<div class="form-element">
 		<label for="title">
 			Recipient's Name: <dfn title="required">*</dfn>
 		</label>
-		<input id="recipient"  type="text"  name="recipient" required="required" placeholder="Jane Doe" />
+		<input id="recipient"  type="text"  name="recipient" required="required" placeholder="Jane Doe" value="<%=recipient %>"  />
 	</div>
 	<div class="form-element">
 		<label for="textMessage">
 			Message: <dfn title="required">*</dfn>
 		</label>
-		<textarea id="textMessage" name="textMessage"></textarea>
+		<textarea id="textMessage" name="textMessage" value="<%=textMessage %>" ></textarea>
 	</div>
 	<div class="form-element">
-		<button class="cta-find-a-gif">Add a GIF</button>
-		<div class="current-gif"></div>
+			<div class="cta-find-a-gif" >Add a GIF</div>
 	</div>
 	<div class="form-element">
 		<input id="submit-msg" type="submit" value="Submit">
 	</div>
 </form>	
+<div class="ui-message">
+	<h2>Let's go see your message</h2>
+</div>
