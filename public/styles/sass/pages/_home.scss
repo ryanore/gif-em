@@ -1,33 +1,9 @@
-.intro{
-/*	border-bottom: 10px solid $brand;*/
-}
-h1{
-	
-}
 h1 strong{
 	color: $brand2nd;
 	margin-bottom: 10px;
 }
 
-/*.cta{
-	@include cta($white, $brand2nd, $brand2ndHL, $headingFont);
-	background-repeat: no-repeat;
-	background-position: center bottom;
-	background-size: 35px;
-	height: 55px;
-	width: 40%;
-	margin: 0 5%;
-	float: left;
-	font-size: .8em;
-	&.search{
-		background-image: url(../images/search-white.png);
-	}
-	&.new{
-		background-image: url(../images/new-white.png);
-	}
-}*/
 #home{
-	
 	.description{
 		text-align: center;
 	}
@@ -57,7 +33,6 @@ h1 strong{
 				border-left:1px solid $white;
 				background: $brand2nd url(../images/new-white.png) no-repeat center bottom;
 				background-size: 30px;
-
 			}
 		}
 	}

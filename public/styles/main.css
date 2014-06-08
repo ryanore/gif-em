@@ -424,7 +424,7 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   text-align: center;
 }
 
-/* line 111, sass/global/_mixins.scss */
+/* line 112, sass/global/_mixins.scss */
 [data-fade] {
   opacity: 0;
   -webkit-transition: opacity 0.25s ease-in;
@@ -433,12 +433,12 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   transition: opacity 0.25s ease-in;
 }
 
-/* line 115, sass/global/_mixins.scss */
+/* line 116, sass/global/_mixins.scss */
 [data-fade].show {
   opacity: 1;
 }
 
-/* line 118, sass/global/_mixins.scss */
+/* line 119, sass/global/_mixins.scss */
 [data-fade=".25"] {
   -webkit-transition-delay: 0.25s;
   -moz-transition-delay: 0.25s;
@@ -446,7 +446,7 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   transition-delay: 0.25s;
 }
 
-/* line 119, sass/global/_mixins.scss */
+/* line 120, sass/global/_mixins.scss */
 [data-fade=".50"] {
   -webkit-transition-delay: 0.5s;
   -moz-transition-delay: 0.5s;
@@ -454,7 +454,7 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   transition-delay: 0.5s;
 }
 
-/* line 120, sass/global/_mixins.scss */
+/* line 121, sass/global/_mixins.scss */
 [data-fade=".75"] {
   -webkit-transition-delay: 0.75s;
   -moz-transition-delay: 0.75s;
@@ -462,7 +462,7 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   transition-delay: 0.75s;
 }
 
-/* line 121, sass/global/_mixins.scss */
+/* line 122, sass/global/_mixins.scss */
 [data-fade="1"] {
   -webkit-transition-delay: 1s;
   -moz-transition-delay: 1s;
@@ -470,7 +470,7 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   transition-delay: 1s;
 }
 
-/* line 122, sass/global/_mixins.scss */
+/* line 123, sass/global/_mixins.scss */
 [data-fade="1.25"] {
   -webkit-transition-delay: 1.25s;
   -moz-transition-delay: 1.25s;
@@ -478,7 +478,7 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   transition-delay: 1.25s;
 }
 
-/* line 123, sass/global/_mixins.scss */
+/* line 124, sass/global/_mixins.scss */
 [data-fade="1.5"] {
   -webkit-transition-delay: 1.5s;
   -moz-transition-delay: 1.5s;
@@ -486,7 +486,7 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   transition-delay: 1.5s;
 }
 
-/* line 124, sass/global/_mixins.scss */
+/* line 125, sass/global/_mixins.scss */
 [data-fade="1.75"] {
   -webkit-transition-delay: 1.75s;
   -moz-transition-delay: 1.75s;
@@ -494,7 +494,7 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   transition-delay: 1.75s;
 }
 
-/* line 125, sass/global/_mixins.scss */
+/* line 126, sass/global/_mixins.scss */
 [data-fade="2"] {
   -webkit-transition-delay: 2s;
   -moz-transition-delay: 2s;
@@ -502,7 +502,7 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   transition-delay: 2s;
 }
 
-/* line 126, sass/global/_mixins.scss */
+/* line 127, sass/global/_mixins.scss */
 [data-fade="2.25"] {
   -webkit-transition-delay: 2.25s;
   -moz-transition-delay: 2.25s;
@@ -510,7 +510,7 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   transition-delay: 2.25s;
 }
 
-/* line 127, sass/global/_mixins.scss */
+/* line 128, sass/global/_mixins.scss */
 [data-fade="2.5"] {
   -webkit-transition-delay: 2.5s;
   -moz-transition-delay: 2.5s;
@@ -518,7 +518,7 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   transition-delay: 2.5s;
 }
 
-/* line 128, sass/global/_mixins.scss */
+/* line 129, sass/global/_mixins.scss */
 [data-fade="2.75"] {
   -webkit-transition-delay: 2.75s;
   -moz-transition-delay: 2.75s;
@@ -526,7 +526,7 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   transition-delay: 2.75s;
 }
 
-/* line 129, sass/global/_mixins.scss */
+/* line 130, sass/global/_mixins.scss */
 [data-fade="3"] {
   -webkit-transition-delay: 3s;
   -moz-transition-delay: 3s;
@@ -534,7 +534,7 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   transition-delay: 3s;
 }
 
-/* line 130, sass/global/_mixins.scss */
+/* line 131, sass/global/_mixins.scss */
 [data-fade="5"] {
   -webkit-transition-delay: 5s;
   -moz-transition-delay: 5s;
@@ -605,12 +605,13 @@ form input[type="button"] {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
+  font-family: sans-serif;
   color: white;
   background-color: #157bb2;
   font-size: 1em;
   -webkit-appearance: none;
 }
-/* line 79, sass/global/_mixins.scss */
+/* line 80, sass/global/_mixins.scss */
 form button:hover,
 form input[type="submit"]:hover,
 form input[type="reset"]:hover,
@@ -630,20 +631,19 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  /*  @include user-select(none);*/
 }
 
-/* line 12, sass/pages/_appMain.scss */
+/* line 11, sass/pages/_appMain.scss */
 h1 {
   margin-top: 0;
 }
 
-/* line 15, sass/pages/_appMain.scss */
+/* line 14, sass/pages/_appMain.scss */
 li {
   list-style-type: none;
 }
 
-/* line 18, sass/pages/_appMain.scss */
+/* line 17, sass/pages/_appMain.scss */
 ul {
   margin: 0;
   padding: 0;
@@ -652,14 +652,14 @@ ul {
 /*
 *	MAIN NAV / HEADER
 */
-/* line 26, sass/pages/_appMain.scss */
+/* line 25, sass/pages/_appMain.scss */
 header {
   position: relative;
   min-height: 40px;
   width: 100%;
 }
 
-/* line 32, sass/pages/_appMain.scss */
+/* line 31, sass/pages/_appMain.scss */
 .main-nav {
   padding-top: 45px;
   max-height: 0;
@@ -671,12 +671,12 @@ header {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   transition: .6s;
 }
-/* line 40, sass/pages/_appMain.scss */
+/* line 39, sass/pages/_appMain.scss */
 .main-nav.extended {
   max-height: 400px;
   background: #ea8400;
 }
-/* line 44, sass/pages/_appMain.scss */
+/* line 43, sass/pages/_appMain.scss */
 .main-nav li {
   display: block;
   width: 100%;
@@ -689,7 +689,7 @@ header {
 }
 
 /* NAVIGATION HAMBURGER */
-/* line 57, sass/pages/_appMain.scss */
+/* line 56, sass/pages/_appMain.scss */
 .hamburger {
   position: absolute;
   right: 5%;
@@ -698,11 +698,11 @@ header {
   border: none;
   padding: 15px;
 }
-/* line 64, sass/pages/_appMain.scss */
+/* line 63, sass/pages/_appMain.scss */
 .hamburger:focus {
   outline: none;
 }
-/* line 67, sass/pages/_appMain.scss */
+/* line 66, sass/pages/_appMain.scss */
 .hamburger .icon-bar {
   display: block;
   width: 24px;
@@ -710,13 +710,13 @@ header {
   border-radius: 1px;
   background: white;
 }
-/* line 74, sass/pages/_appMain.scss */
+/* line 73, sass/pages/_appMain.scss */
 .hamburger .icon-bar + .icon-bar {
   margin-top: 4px;
 }
 
 /* MAIN LOADING INDICATOR*/
-/* line 82, sass/pages/_appMain.scss */
+/* line 81, sass/pages/_appMain.scss */
 #loading {
   -webkit-transition: opacity 0.5s ease;
   -moz-transition: opacity 0.5s ease;
@@ -737,17 +737,18 @@ header {
   background: white url(../images/loading.gif) no-repeat center center;
   background-size: 50%;
 }
-/* line 98, sass/pages/_appMain.scss */
+/* line 97, sass/pages/_appMain.scss */
 #loading.loading {
   top: 50%;
   opacity: 1;
 }
 
-/* line 105, sass/pages/_appMain.scss */
+/* line 104, sass/pages/_appMain.scss */
 .ui-message {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 50%;
+  margin-top: 25%;
   display: none;
   top: 0;
   left: 0;
@@ -766,45 +767,23 @@ header {
 }
 
 /* line 1, sass/pages/_home.scss */
-.intro {
-  /*	border-bottom: 10px solid $brand;*/
-}
-
-/* line 7, sass/pages/_home.scss */
 h1 strong {
   color: #ea8400;
   margin-bottom: 10px;
 }
 
-/*.cta{
-	@include cta($white, $brand2nd, $brand2ndHL, $headingFont);
-	background-repeat: no-repeat;
-	background-position: center bottom;
-	background-size: 35px;
-	height: 55px;
-	width: 40%;
-	margin: 0 5%;
-	float: left;
-	font-size: .8em;
-	&.search{
-		background-image: url(../images/search-white.png);
-	}
-	&.new{
-		background-image: url(../images/new-white.png);
-	}
-}*/
-/* line 31, sass/pages/_home.scss */
+/* line 7, sass/pages/_home.scss */
 #home .description {
   text-align: center;
 }
-/* line 34, sass/pages/_home.scss */
+/* line 10, sass/pages/_home.scss */
 #home .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
 }
-/* line 40, sass/pages/_home.scss */
+/* line 16, sass/pages/_home.scss */
 #home .footer .cta {
   width: 50%;
   float: left;
@@ -817,13 +796,13 @@ h1 strong {
   font-size: .7em;
   cursor: pointer;
 }
-/* line 51, sass/pages/_home.scss */
+/* line 27, sass/pages/_home.scss */
 #home .footer .cta.search {
   border-right: 1px solid white;
   background: #ea8400 url(../images/search-white.png) no-repeat center bottom;
   background-size: 30px;
 }
-/* line 56, sass/pages/_home.scss */
+/* line 32, sass/pages/_home.scss */
 #home .footer .cta.new {
   border-left: 1px solid white;
   background: #ea8400 url(../images/new-white.png) no-repeat center bottom;
@@ -854,38 +833,30 @@ h1 strong {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
-  color: #fff;
-  font-family: "Chelsea Market", Impact, Arial;
-  font-weight: bold;
-  font-size: 1.3em;
-  height: 50px;
-  width: 45%;
   float: left;
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
   background-color: #222222;
-  border: 2px dotted #aaa;
-  text-align: center;
+  border: 2px solid #ea8400;
+  text-indent: -999em;
 }
-/* line 32, sass/pages/_newmessage.scss */
+/* line 23, sass/pages/_newmessage.scss */
 #create-msg input[type="submit"] {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
+  font-family: "Chelsea Market", Impact, Arial;
   color: white;
   background-color: #ea8400;
   margin-top: 10px;
   float: right;
   width: 45%;
 }
-/* line 79, sass/global/_mixins.scss */
+/* line 80, sass/global/_mixins.scss */
 #create-msg input[type="submit"]:hover {
   background-color: #ff9b19;
 }
-/* line 39, sass/pages/_newmessage.scss */
+/* line 30, sass/pages/_newmessage.scss */
 #create-msg #textMessage {
   padding: 10px;
   height: 75px;
@@ -961,42 +932,44 @@ h1 strong {
   -o-border-radius: 5px;
   border-radius: 5px;
   -webkit-overflow-scrolling: touch;
+  border: 2px solid #fff;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
 }
-/* line 51, sass/pages/_searchGiphy.scss */
+/* line 52, sass/pages/_searchGiphy.scss */
 .search-giphy .scrollContainer .scroll {
   overflow-x: hidden;
 }
-/* line 56, sass/pages/_searchGiphy.scss */
+/* line 57, sass/pages/_searchGiphy.scss */
 .search-giphy form {
   padding: 0;
   margin: 0;
 }
-/* line 61, sass/pages/_searchGiphy.scss */
+/* line 62, sass/pages/_searchGiphy.scss */
 .search-giphy input[type="search"] {
   margin: 0;
   border: 2px solid white;
   height: 40px;
 }
-/* line 67, sass/pages/_searchGiphy.scss */
+/* line 68, sass/pages/_searchGiphy.scss */
 .search-giphy .cancel {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
+  font-family: sans-serif;
   color: #157bb2;
   background-color: white;
 }
-/* line 79, sass/global/_mixins.scss */
+/* line 80, sass/global/_mixins.scss */
 .search-giphy .cancel:hover {
   background-color: #00a6ff;
 }
 
-/* line 73, sass/pages/_searchGiphy.scss */
+/* line 74, sass/pages/_searchGiphy.scss */
 .view-giphy-thumb {
   padding: 10px 0;
   background: #222222 url(../images/loading-small.gif) no-repeat center center;
@@ -1005,7 +978,7 @@ h1 strong {
   position: relative;
   cursor: pointer;
 }
-/* line 81, sass/pages/_searchGiphy.scss */
+/* line 82, sass/pages/_searchGiphy.scss */
 .view-giphy-thumb .image {
   -webkit-transition: opacity 0.3s ease-in;
   -moz-transition: opacity 0.3s ease-in;
@@ -1019,17 +992,18 @@ h1 strong {
   opacity: 1;
   background-color: #222222;
 }
-/* line 90, sass/pages/_searchGiphy.scss */
+/* line 91, sass/pages/_searchGiphy.scss */
 .view-giphy-thumb .image.loading {
   opacity: .3;
 }
-/* line 95, sass/pages/_searchGiphy.scss */
+/* line 96, sass/pages/_searchGiphy.scss */
 .view-giphy-thumb button {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
+  font-family: "Chelsea Market", Impact, Arial;
   color: white;
   background-color: #ea8400;
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
@@ -1045,11 +1019,11 @@ h1 strong {
   right: -100%;
   opacity: 0;
 }
-/* line 79, sass/global/_mixins.scss */
+/* line 80, sass/global/_mixins.scss */
 .view-giphy-thumb button:hover {
   background-color: #ff9b19;
 }
-/* line 100, sass/pages/_searchGiphy.scss */
+/* line 101, sass/pages/_searchGiphy.scss */
 .view-giphy-thumb button.show {
   right: 5px;
   bottom: 5px;
@@ -1075,9 +1049,10 @@ h1 strong {
 /* line 1, sass/pages/_message.scss */
 .msg-container {
   display: table;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+  background-color: black;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -1086,12 +1061,32 @@ h1 strong {
   right: 0;
   bottom: 0;
 }
-/* line 10, sass/pages/_message.scss */
+/* line 11, sass/pages/_message.scss */
 .msg-container * {
   text-align: center;
 }
+@media only screen and (orientation: portrait) {
+  /* line 16, sass/pages/_message.scss */
+  .msg-container.portrait {
+    background-size: cover;
+  }
+  /* line 19, sass/pages/_message.scss */
+  .msg-container.landscape {
+    background-size: contain;
+  }
+}
+@media only screen and (orientation: landscape) {
+  /* line 24, sass/pages/_message.scss */
+  .msg-container.portrait {
+    background-size: contain;
+  }
+  /* line 27, sass/pages/_message.scss */
+  .msg-container.landscape {
+    background-size: cover;
+  }
+}
 
-/* line 15, sass/pages/_message.scss */
+/* line 34, sass/pages/_message.scss */
 .message-cta {
   position: absolute;
   display: inline-block;
@@ -1106,19 +1101,20 @@ h1 strong {
   background: white;
 }
 
-/* line 30, sass/pages/_message.scss */
+/* line 49, sass/pages/_message.scss */
 .msg-body {
   opacity: 0;
   display: table-cell;
   vertical-align: middle;
 }
-/* line 34, sass/pages/_message.scss */
+/* line 53, sass/pages/_message.scss */
 .msg-body .close {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
+  font-family: "Chelsea Market", Impact, Arial;
   color: white;
   background-color: #ea8400;
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
@@ -1131,30 +1127,30 @@ h1 strong {
   padding: 0;
   border: 2px solid #fff;
   position: absolute;
-  right: 0;
+  right: 5px;
 }
-/* line 79, sass/global/_mixins.scss */
+/* line 80, sass/global/_mixins.scss */
 .msg-body .close:hover {
   background-color: #ff9b19;
 }
 
-/* line 42, sass/pages/_message.scss */
+/* line 61, sass/pages/_message.scss */
 .msg-container.white-on-black .msg-body .inner {
   padding: 20px 5px;
   background: rgba(0, 0, 0, 0.3);
 }
-/* line 45, sass/pages/_message.scss */
+/* line 64, sass/pages/_message.scss */
 .msg-container.white-on-black .msg-body .inner h1, .msg-container.white-on-black .msg-body .inner h2, .msg-container.white-on-black .msg-body .inner p {
   color: white;
 }
-/* line 52, sass/pages/_message.scss */
+/* line 71, sass/pages/_message.scss */
 .msg-container.black-on-white .msg-body .inner {
   padding: 20px 5px;
   margin: 0 2%;
   background: rgba(255, 255, 255, 0.3);
   border: 3px solid black;
 }
-/* line 57, sass/pages/_message.scss */
+/* line 76, sass/pages/_message.scss */
 .msg-container.black-on-white .msg-body .inner h1, .msg-container.black-on-white .msg-body .inner h2, .msg-container.black-on-white .msg-body .inner p {
   color: #000;
 }

@@ -21,9 +21,12 @@
 	</div>
 	<div class="form-element">
 		
-			<div class="cta-find-a-gif" 
-			<%if(typeof imageData != 'undefined'){%>
+			<div 
+				<%if(typeof imageData != 'undefined'){%>
+				class="cta-find-a-gif found" 
 				style="background-image: url('<%= imageData.small.url %>')" 
+			<%}else{%>
+				class="cta-find-a-gif" 
 			<%}%>
 			>Add a GIF</div>
 		

@@ -74,6 +74,7 @@
 @mixin cta($color, $bgColor, $bgColorHover, $font: $headingFont) {
 	@extend %btn;
 	@include border-radius(4px);
+	font-family: $font;
 	color: $color;
 	background-color: $bgColor;
 	&:hover{

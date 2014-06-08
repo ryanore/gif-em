@@ -10,7 +10,10 @@ function($, _, Backbone){
 			original:{},
 			small:{}
 		},
-		initialize: function () {	}
+		initialize: function () {
+			var o = this.get('original').height <= this.get('original').width   ?  'landscape' :  'portrait';
+			this.set('orientation', o);
+		}
     });
 
 	return Giphy;

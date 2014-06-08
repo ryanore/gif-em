@@ -1,8 +1,8 @@
-<div class="msg-container black-on-white" style="background-image: url('<%= imageData.small.url %>');">
+<div class="msg-container black-on-white <%= imageData.orientation %>" style="background-image: url('<%= imageData.small.url %>');">
 	<div  class="msg-body">
 		<button class="close">X</button>
 		<div class="inner">
-				<h1 data-fade=".25">Hey <%=recipient %>, Now that I have your attention,</h1>
+				<h2 data-fade=".25">Hey <%=recipient %>, Now that I have your attention,</h2>
 				<p data-fade="1">	<%= textMessage %></p>
 				<br>
 				<p data-fade="2">Sincerely,
