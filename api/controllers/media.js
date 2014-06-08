@@ -6,7 +6,6 @@ exports.load = function(req, res) {
 	var url = req.params.url;
 	
 	var p = url.replace(host,'');
-	console.log(p);
 	if (url) {
 
 	  var options = {
