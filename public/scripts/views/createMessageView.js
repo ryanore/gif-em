@@ -39,12 +39,6 @@ function(
 	        return events;
 	    },
 	
-		handleChange: function(e){
-			var prop = e.target.name;
-			var val = e.target.value;
-			this.model.set({prop: val});
-		},
-	
 		updateImg: function(){
 			var img = this.model.get('imageData');
 		   $('.cta-find-a-gif').addClass('found').css('background-image','url("'+img.small.url+'")');
