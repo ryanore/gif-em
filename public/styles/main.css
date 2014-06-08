@@ -722,12 +722,14 @@ h1 strong {
   height: 70px;
   width: 45%;
   float: left;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
   border: 2px dotted #aaa;
   text-align: center;
   line-height: 50px;
 }
-/* line 13, sass/pages/_newmessage.scss */
+/* line 15, sass/pages/_newmessage.scss */
 #create-msg .cta-find-a-gif.found {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -748,7 +750,7 @@ h1 strong {
   border: 2px dotted #aaa;
   text-align: center;
 }
-/* line 30, sass/pages/_newmessage.scss */
+/* line 32, sass/pages/_newmessage.scss */
 #create-msg input[type="submit"] {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -765,7 +767,7 @@ h1 strong {
 #create-msg input[type="submit"]:hover {
   background-color: #ff9b19;
 }
-/* line 37, sass/pages/_newmessage.scss */
+/* line 39, sass/pages/_newmessage.scss */
 #create-msg #textMessage {
   padding: 10px;
   height: 75px;
@@ -935,11 +937,17 @@ h1 strong {
   opacity: 1;
 }
 
-/* line 6, sass/pages/_previousMessages.scss */
+/* line 1, sass/pages/_previousMessages.scss */
+.msg-list li {
+  display: block;
+  width: 100%;
+}
+
+/* line 8, sass/pages/_previousMessages.scss */
 .view-message-cta span {
   display: inline-block;
 }
-/* line 9, sass/pages/_previousMessages.scss */
+/* line 11, sass/pages/_previousMessages.scss */
 .view-message-cta .date {
   width: 100px;
   padding: 10px 0;

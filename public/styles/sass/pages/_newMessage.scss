@@ -1,16 +1,18 @@
 #create-msg{
 
-		.cta-find-a-gif{
+	.cta-find-a-gif{
 			@include border-radius(5px);
 			height: 70px;
 			width: 45%;
 			float: left;
-			background-size: cover;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
 			border: 2px dotted #aaa;
 			text-align: center;
 			line-height: 50px;
-		}
-		.cta-find-a-gif.found{
+	}
+	.cta-find-a-gif.found{
 			@include border-radius(5px);
 			color: #fff;
 			font-family: $headingFont;
@@ -25,7 +27,7 @@
 			background-color: $dark;
 			border: 2px dotted #aaa;
 			text-align: center;
-		}
+	}
 	
 	input[type="submit"]{
 		@include cta($white, $brand2nd, $brand2ndHL, $headingFont);

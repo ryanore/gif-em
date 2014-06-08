@@ -11,7 +11,6 @@ function($, _, Backbone){
 			textMessage: '',
 			brightness: 0,
 			public: true,
-			imageData: {},
 			createdAt: new Date()
 		},
 	

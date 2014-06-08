@@ -1,5 +1,7 @@
 .msg-list li{
 	@extend %link;
+	display: block;
+	width: 100%;
 }
 
 .view-message-cta{
