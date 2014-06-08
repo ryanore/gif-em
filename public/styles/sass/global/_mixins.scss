@@ -91,8 +91,41 @@
 	}
 }
 
+@mixin roundButton(){
+	@include cta($white, $brand2nd, $brand2ndHL);
+	@include box-shadow( 0 3px 3px rgba(0, 0, 0, 0.6));
+	font-size: 14px;
+	height: 36px;
+	width: 36px;
+	border-radius: 18px;
+	padding:0;
+	border: 2px solid #fff;
+}
+
 @mixin scrollPanel(){
 	overflow-y: scroll; 
 	overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
+
+[data-fade]{
+	opacity: 0;
+	@include single-transition(opacity, .25s, ease-in);
+}
+[data-fade].show{
+	opacity: 1;
+}
+[data-fade=".25"]{@include transition-delay(.25s);}
+[data-fade=".50"]{@include transition-delay(.50s);}
+[data-fade=".75"]{@include transition-delay(.75s);}
+[data-fade="1"]{@include transition-delay(1s);}
+[data-fade="1.25"]{@include transition-delay(1.25s);}
+[data-fade="1.5"]{@include transition-delay(1.5s);}
+[data-fade="1.75"]{@include transition-delay(1.75s);}
+[data-fade="2"]{@include transition-delay(2s);}
+[data-fade="2.25"]{@include transition-delay(2.25s);}
+[data-fade="2.5"]{@include transition-delay(2.5s);}
+[data-fade="2.75"]{@include transition-delay(2.75s);}
+[data-fade="3"]{@include transition-delay(3s);}
+[data-fade="5"]{@include transition-delay(5s);}
+

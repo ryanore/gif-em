@@ -23,6 +23,7 @@
 	}
 }
 
+
 .search-giphy{
  	@include display-box;
   @include box-orient(vertical);
@@ -42,11 +43,11 @@
 	.scrollContainer{
 		@include box-flex(10);
 		@include border-radius(5px);
+		-webkit-overflow-scrolling: touch;
 		width: 100%;
 		height: 100%;
 	  overflow-x:hidden;
 	  overflow-y: scroll;
-		-webkit-overflow-scrolling: touch;
 		.scroll{
 			overflow-x:hidden;
 		}
@@ -75,7 +76,10 @@
 	border: 2px solid #000;
 	border-top: none;
 	position: relative;
+	cursor: pointer;
+
 	.image{
+		@include single-transition(opacity, .3s, ease-in);
 		width: 100%;
 		height: 200px;
 		background-size: contain;
@@ -83,28 +87,22 @@
 		background-position: center center;
 		opacity: 1;
 		background-color: $dark;
-		@include single-transition(opacity, .3s, ease-in);
+		&.loading{
+			opacity: .3;
+		}
 	}
-	.image.loading{
-		opacity: .3;
-	}
+
 	button{
-		@include cta($white, $brand2nd, $brand2ndHL);
-		@include box-shadow( 0 3px 3px rgba(0, 0, 0, 0.6));
+		@include roundButton();
 		position: absolute;
-		font-size: 14px;
-		height: 36px;
-		width: 36px;
-		border-radius: 18px;
 		right: -100%;
 		opacity: 0;
-		padding:0;
-		border: 2px solid #fff;
+		&.show{
+			right: 5px;
+			bottom: 5px;
+			opacity: 1;
+		}
 	}
-	button.show{
-		right: 5px;
-		bottom: 5px;
-		opacity: 1;
-	}
+
 }
 

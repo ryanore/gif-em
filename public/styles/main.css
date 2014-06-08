@@ -386,7 +386,7 @@ form textarea {
 
 /* LINKS */
 /* line 46, sass/global/_mixins.scss */
-.msg-list li {
+.msg-list li, .message-cta {
   -webkit-transition: background-color 0.15s ease-in;
   -moz-transition: background-color 0.15s ease-in;
   -o-transition: background-color 0.15s ease-in;
@@ -400,7 +400,7 @@ form textarea {
   color: #157bb2;
 }
 /* line 55, sass/global/_mixins.scss */
-.msg-list li:hover, .msg-list li:active, .msg-list li:visited {
+.msg-list li:hover, .message-cta:hover, .msg-list li:active, .message-cta:active, .msg-list li:visited, .message-cta:visited {
   color: #00a6ff;
 }
 
@@ -409,7 +409,7 @@ form textarea {
 form button,
 form input[type="submit"],
 form input[type="reset"],
-form input[type="button"], #create-msg input[type="submit"], .search-giphy .cancel, .view-giphy-thumb button {
+form input[type="button"], #create-msg input[type="submit"], .search-giphy .cancel, .view-giphy-thumb button, .msg-body .close {
   -webkit-transition: background-color 0.15s ease-in;
   -moz-transition: background-color 0.15s ease-in;
   -o-transition: background-color 0.15s ease-in;
@@ -422,6 +422,124 @@ form input[type="button"], #create-msg input[type="submit"], .search-giphy .canc
   display: inline-block;
   cursor: pointer;
   text-align: center;
+}
+
+/* line 111, sass/global/_mixins.scss */
+[data-fade] {
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease-in;
+  -moz-transition: opacity 0.25s ease-in;
+  -o-transition: opacity 0.25s ease-in;
+  transition: opacity 0.25s ease-in;
+}
+
+/* line 115, sass/global/_mixins.scss */
+[data-fade].show {
+  opacity: 1;
+}
+
+/* line 118, sass/global/_mixins.scss */
+[data-fade=".25"] {
+  -webkit-transition-delay: 0.25s;
+  -moz-transition-delay: 0.25s;
+  -o-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
+/* line 119, sass/global/_mixins.scss */
+[data-fade=".50"] {
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+/* line 120, sass/global/_mixins.scss */
+[data-fade=".75"] {
+  -webkit-transition-delay: 0.75s;
+  -moz-transition-delay: 0.75s;
+  -o-transition-delay: 0.75s;
+  transition-delay: 0.75s;
+}
+
+/* line 121, sass/global/_mixins.scss */
+[data-fade="1"] {
+  -webkit-transition-delay: 1s;
+  -moz-transition-delay: 1s;
+  -o-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+/* line 122, sass/global/_mixins.scss */
+[data-fade="1.25"] {
+  -webkit-transition-delay: 1.25s;
+  -moz-transition-delay: 1.25s;
+  -o-transition-delay: 1.25s;
+  transition-delay: 1.25s;
+}
+
+/* line 123, sass/global/_mixins.scss */
+[data-fade="1.5"] {
+  -webkit-transition-delay: 1.5s;
+  -moz-transition-delay: 1.5s;
+  -o-transition-delay: 1.5s;
+  transition-delay: 1.5s;
+}
+
+/* line 124, sass/global/_mixins.scss */
+[data-fade="1.75"] {
+  -webkit-transition-delay: 1.75s;
+  -moz-transition-delay: 1.75s;
+  -o-transition-delay: 1.75s;
+  transition-delay: 1.75s;
+}
+
+/* line 125, sass/global/_mixins.scss */
+[data-fade="2"] {
+  -webkit-transition-delay: 2s;
+  -moz-transition-delay: 2s;
+  -o-transition-delay: 2s;
+  transition-delay: 2s;
+}
+
+/* line 126, sass/global/_mixins.scss */
+[data-fade="2.25"] {
+  -webkit-transition-delay: 2.25s;
+  -moz-transition-delay: 2.25s;
+  -o-transition-delay: 2.25s;
+  transition-delay: 2.25s;
+}
+
+/* line 127, sass/global/_mixins.scss */
+[data-fade="2.5"] {
+  -webkit-transition-delay: 2.5s;
+  -moz-transition-delay: 2.5s;
+  -o-transition-delay: 2.5s;
+  transition-delay: 2.5s;
+}
+
+/* line 128, sass/global/_mixins.scss */
+[data-fade="2.75"] {
+  -webkit-transition-delay: 2.75s;
+  -moz-transition-delay: 2.75s;
+  -o-transition-delay: 2.75s;
+  transition-delay: 2.75s;
+}
+
+/* line 129, sass/global/_mixins.scss */
+[data-fade="3"] {
+  -webkit-transition-delay: 3s;
+  -moz-transition-delay: 3s;
+  -o-transition-delay: 3s;
+  transition-delay: 3s;
+}
+
+/* line 130, sass/global/_mixins.scss */
+[data-fade="5"] {
+  -webkit-transition-delay: 5s;
+  -moz-transition-delay: 5s;
+  -o-transition-delay: 5s;
+  transition-delay: 5s;
 }
 
 /* #Forms
@@ -802,7 +920,7 @@ h1 strong {
   padding: 10% 0;
 }
 
-/* line 26, sass/pages/_searchGiphy.scss */
+/* line 27, sass/pages/_searchGiphy.scss */
 .search-giphy {
   display: -webkit-box;
   display: -moz-box;
@@ -821,7 +939,7 @@ h1 strong {
   min-height: 100%;
   overflow-x: hidden;
 }
-/* line 36, sass/pages/_searchGiphy.scss */
+/* line 37, sass/pages/_searchGiphy.scss */
 .search-giphy header, .search-giphy footer {
   -webkit-box-flex: 0.1;
   -moz-box-flex: 0.1;
@@ -831,7 +949,7 @@ h1 strong {
   min-height: 60px;
   padding: 10px 0;
 }
-/* line 42, sass/pages/_searchGiphy.scss */
+/* line 43, sass/pages/_searchGiphy.scss */
 .search-giphy .scrollContainer {
   -webkit-box-flex: 10;
   -moz-box-flex: 10;
@@ -842,28 +960,28 @@ h1 strong {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
+  -webkit-overflow-scrolling: touch;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
 }
-/* line 50, sass/pages/_searchGiphy.scss */
+/* line 51, sass/pages/_searchGiphy.scss */
 .search-giphy .scrollContainer .scroll {
   overflow-x: hidden;
 }
-/* line 55, sass/pages/_searchGiphy.scss */
+/* line 56, sass/pages/_searchGiphy.scss */
 .search-giphy form {
   padding: 0;
   margin: 0;
 }
-/* line 60, sass/pages/_searchGiphy.scss */
+/* line 61, sass/pages/_searchGiphy.scss */
 .search-giphy input[type="search"] {
   margin: 0;
   border: 2px solid white;
   height: 40px;
 }
-/* line 66, sass/pages/_searchGiphy.scss */
+/* line 67, sass/pages/_searchGiphy.scss */
 .search-giphy .cancel {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -878,16 +996,21 @@ h1 strong {
   background-color: #00a6ff;
 }
 
-/* line 72, sass/pages/_searchGiphy.scss */
+/* line 73, sass/pages/_searchGiphy.scss */
 .view-giphy-thumb {
   padding: 10px 0;
   background: #222222 url(../images/loading-small.gif) no-repeat center center;
   border: 2px solid #000;
   border-top: none;
   position: relative;
+  cursor: pointer;
 }
-/* line 78, sass/pages/_searchGiphy.scss */
+/* line 81, sass/pages/_searchGiphy.scss */
 .view-giphy-thumb .image {
+  -webkit-transition: opacity 0.3s ease-in;
+  -moz-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
   width: 100%;
   height: 200px;
   background-size: contain;
@@ -895,16 +1018,12 @@ h1 strong {
   background-position: center center;
   opacity: 1;
   background-color: #222222;
-  -webkit-transition: opacity 0.3s ease-in;
-  -moz-transition: opacity 0.3s ease-in;
-  -o-transition: opacity 0.3s ease-in;
-  transition: opacity 0.3s ease-in;
 }
-/* line 88, sass/pages/_searchGiphy.scss */
+/* line 90, sass/pages/_searchGiphy.scss */
 .view-giphy-thumb .image.loading {
   opacity: .3;
 }
-/* line 91, sass/pages/_searchGiphy.scss */
+/* line 95, sass/pages/_searchGiphy.scss */
 .view-giphy-thumb button {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -916,21 +1035,21 @@ h1 strong {
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
-  position: absolute;
   font-size: 14px;
   height: 36px;
   width: 36px;
   border-radius: 18px;
-  right: -100%;
-  opacity: 0;
   padding: 0;
   border: 2px solid #fff;
+  position: absolute;
+  right: -100%;
+  opacity: 0;
 }
 /* line 79, sass/global/_mixins.scss */
 .view-giphy-thumb button:hover {
   background-color: #ff9b19;
 }
-/* line 104, sass/pages/_searchGiphy.scss */
+/* line 100, sass/pages/_searchGiphy.scss */
 .view-giphy-thumb button.show {
   right: 5px;
   bottom: 5px;
@@ -973,107 +1092,69 @@ h1 strong {
 }
 
 /* line 15, sass/pages/_message.scss */
+.message-cta {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  padding: 3px 15px;
+  border-top-right-radius: 5px;
+  color: #00a6ff;
+  border: #157bb2;
+  display: block;
+  background: white;
+}
+
+/* line 30, sass/pages/_message.scss */
 .msg-body {
   opacity: 0;
   display: table-cell;
   vertical-align: middle;
 }
+/* line 34, sass/pages/_message.scss */
+.msg-body .close {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  color: white;
+  background-color: #ea8400;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+  padding: 0;
+  border: 2px solid #fff;
+  position: absolute;
+  right: 0;
+}
+/* line 79, sass/global/_mixins.scss */
+.msg-body .close:hover {
+  background-color: #ff9b19;
+}
 
-/* line 22, sass/pages/_message.scss */
+/* line 42, sass/pages/_message.scss */
 .msg-container.white-on-black .msg-body .inner {
   padding: 20px 5px;
   background: rgba(0, 0, 0, 0.3);
 }
-/* line 25, sass/pages/_message.scss */
+/* line 45, sass/pages/_message.scss */
 .msg-container.white-on-black .msg-body .inner h1, .msg-container.white-on-black .msg-body .inner h2, .msg-container.white-on-black .msg-body .inner p {
   color: white;
 }
-/* line 32, sass/pages/_message.scss */
+/* line 52, sass/pages/_message.scss */
 .msg-container.black-on-white .msg-body .inner {
   padding: 20px 5px;
   margin: 0 2%;
   background: rgba(255, 255, 255, 0.3);
   border: 3px solid black;
 }
-/* line 37, sass/pages/_message.scss */
+/* line 57, sass/pages/_message.scss */
 .msg-container.black-on-white .msg-body .inner h1, .msg-container.black-on-white .msg-body .inner h2, .msg-container.black-on-white .msg-body .inner p {
   color: #000;
-}
-
-/* line 44, sass/pages/_message.scss */
-[data-fade] {
-  opacity: 0;
-  -webkit-transition: opacity 0.25s ease-in;
-  -moz-transition: opacity 0.25s ease-in;
-  -o-transition: opacity 0.25s ease-in;
-  transition: opacity 0.25s ease-in;
-}
-
-/* line 48, sass/pages/_message.scss */
-[data-fade].show {
-  opacity: 1;
-}
-
-/* line 51, sass/pages/_message.scss */
-[data-fade=".25"] {
-  -webkit-transition-delay: 0.25s;
-  -moz-transition-delay: 0.25s;
-  -o-transition-delay: 0.25s;
-  transition-delay: 0.25s;
-}
-
-/* line 52, sass/pages/_message.scss */
-[data-fade=".50"] {
-  -webkit-transition-delay: 0.5s;
-  -moz-transition-delay: 0.5s;
-  -o-transition-delay: 0.5s;
-  transition-delay: 0.5s;
-}
-
-/* line 53, sass/pages/_message.scss */
-[data-fade=".75"] {
-  -webkit-transition-delay: 0.75s;
-  -moz-transition-delay: 0.75s;
-  -o-transition-delay: 0.75s;
-  transition-delay: 0.75s;
-}
-
-/* line 54, sass/pages/_message.scss */
-[data-fade="1"] {
-  -webkit-transition-delay: 1s;
-  -moz-transition-delay: 1s;
-  -o-transition-delay: 1s;
-  transition-delay: 1s;
-}
-
-/* line 55, sass/pages/_message.scss */
-[data-fade="1.25"] {
-  -webkit-transition-delay: 1.25s;
-  -moz-transition-delay: 1.25s;
-  -o-transition-delay: 1.25s;
-  transition-delay: 1.25s;
-}
-
-/* line 56, sass/pages/_message.scss */
-[data-fade="1.5"] {
-  -webkit-transition-delay: 1.5s;
-  -moz-transition-delay: 1.5s;
-  -o-transition-delay: 1.5s;
-  transition-delay: 1.5s;
-}
-
-/* line 57, sass/pages/_message.scss */
-[data-fade="1.75"] {
-  -webkit-transition-delay: 1.75s;
-  -moz-transition-delay: 1.75s;
-  -o-transition-delay: 1.75s;
-  transition-delay: 1.75s;
-}
-
-/* line 58, sass/pages/_message.scss */
-[data-fade="2"] {
-  -webkit-transition-delay: 2s;
-  -moz-transition-delay: 2s;
-  -o-transition-delay: 2s;
-  transition-delay: 2s;
 }
