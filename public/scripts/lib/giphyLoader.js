@@ -9,7 +9,9 @@ function($){
 		
 		load: function(url, callback){
 
-			var image = new Image();
+			var image = new Image()
+			image.crossOrigin = "Anonymous";
+
 
 			image.onLoad = function(){
 				var canvas = document.createElement("canvas");
@@ -38,7 +40,7 @@ function($){
 	
 				callback(brightness);
 			}
-
+		
 			image.src = url;
 		}
 		

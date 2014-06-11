@@ -22,6 +22,9 @@ var Ntihya = (function(){
 				.get( Messages.load )
 				.put( Messages.update )
 				.delete( Messages.delete );
+
+			router.route('/media/load')
+				.get( Media.proxy );
 	
 		}
 	}

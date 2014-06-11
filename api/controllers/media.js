@@ -1,28 +1,25 @@
-var http = require('http');
-var host = "http://api.giphy.com";
-var port = 80;
+var URL = require('url'),
+    http = require('http'),
+    request = require('request').defaults({ encoding: null});
 
-exports.load = function(req, res) {
-	var url = req.params.url;
-	
-	var p = url.replace(host,'');
-	if (url) {
+exports.proxy = function(req, res){
+	var _url = URL.parse(req.url,true);
+	var u = _url.query.u;
+	var requestUrl  = URL.parse(u,true);
 
-	  var options = {
-	    hostname: host,
-	    port: port,
-	    path: url,
+	var options = {
+	    url: requestUrl,
+	    port: 80,
 	    method: 'GET'
-	  };
+	};
+
+	request.get(options, function (error, response, body) {
+	    if (!error && response.statusCode == 200) {
+	        data = "data:" + response.headers["content-type"] + ";base64," + new Buffer(body).toString('base64');
+	        res.send(data);
+	    }else{
+			console.log(error);
+		}
+	});
 	
-	  var proxy = http.request(options, function (res) {
-		console.log(res);
-	    res.pipe(res, {
-	      end: true
-	    });
-	  });
-	  
-	} else {
-	  res.json("No url");
-	}
-};
+}
