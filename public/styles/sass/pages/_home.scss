@@ -4,6 +4,7 @@ h1 strong{
 }
 
 #home{
+
 	.description{
 		text-align: center;
 	}
@@ -35,6 +36,28 @@ h1 strong{
 				background-size: 30px;
 			}
 		}
+		
 	}
+
+		
+		@media screen and (min-width: $tablet) {
+			.description{
+				min-height: 300px;
+			}
+			.footer{
+				position: static;
+				.cta.search, .cta.new{
+					width: 30%;
+					margin: 10%;
+					font-size: .8em;
+					height: 75px;
+					border: none;
+					background-size: 80px;
+					background-position: center center;
+					border-radius: 5px;
+					text-indent: -999em;
+				}
+			}
+		}
 
 }

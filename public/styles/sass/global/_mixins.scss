@@ -109,6 +109,7 @@
   -webkit-overflow-scrolling: touch;
 }
 
+
 [data-fade]{
 	opacity: 0;
 	@include single-transition(opacity, .25s, ease-in);

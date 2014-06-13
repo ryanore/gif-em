@@ -2,6 +2,7 @@ body{
 	background: $white;
 	font-family: $bodyFont;
 	color: $bodyColor;
+	-webkit-font-smoothing: antialiased;
 }
 
 *{
@@ -50,6 +51,25 @@ header{
 		cursor: pointer;
 		text-transform: uppercase;
 	}
+	
+	@media screen and (min-width: $tablet) {
+		padding-top: 0;
+		max-height: inherit;
+		background: $brand2nd;
+		border-bottom: 1px solid $brand2ndHL;
+		text-align: right;
+		width: 100%;
+		li{
+			display: inline-block;
+			padding: 1em;
+			width: auto;
+			margin-right: -3px;
+			background: none;
+			border: none;
+			font-size: .7em;
+		}
+	}
+	
 }
 
 /* NAVIGATION HAMBURGER */
@@ -72,6 +92,10 @@ header{
 	}
 	.icon-bar+.icon-bar {
 		margin-top: 4px
+	}
+	
+	@media screen and (min-width: $tablet) {
+		display: none;
 	}
 }
 
@@ -120,6 +144,7 @@ header{
 
 /* PAGES */
 #content{
+	max-width: 1200px;
 	padding: $pagePadding;
 }
 
