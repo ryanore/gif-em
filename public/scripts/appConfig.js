@@ -18,7 +18,7 @@ require.config({
 		MessageView:'views/messageView',
 		AllMessagesView:'views/allMessagesView',
 		RecentMessagesView:'views/recentMessagesView',
-		CreateMessageView:'views/createMessageView',
+		NewGifemView:'views/NewGifemView',
 		SearchGiphyView:'views/searchGiphyView',
 		GiphyView:'views/giphyView',
 
@@ -26,7 +26,7 @@ require.config({
 		homeTemplate:'templates/homeTemplate.ejs',
 		messageTemplate:'templates/messageTemplate.ejs',
 		allMessagesTemplate:'templates/allMessagesTemplate.ejs',
-		createMessageTemplate:'templates/createMessageTemplate.ejs',
+		newGifemTemplate:'templates/newGifemTemplate.ejs',
 		searchGiphyTemplate:'templates/searchGiphyTemplate.ejs',
 		giphyTemplate:'templates/giphyTemplate.ejs'
 	},

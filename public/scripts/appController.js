@@ -8,7 +8,7 @@ define([
 	'MessageView',
 	'AllMessagesView',
 	'MessagesCollection',
-	'CreateMessageView',
+	'NewGifemView',
 	'SearchGiphyView',
 	'GiphyCollection'
 ],function(
@@ -21,7 +21,7 @@ define([
 	MessageView,
 	AllMessagesView,
 	MessagesCollection,
-	CreateMessageView,
+	NewGifemView,
 	SearchGiphyView,
 	GiphyCollection
 ){
@@ -105,7 +105,7 @@ define([
 
 	var newMessage = function () {
 		mainView.transition(function(){
-			var view = new CreateMessageView( { model: currentMessage } );
+			var view = new NewGifemView( { model: currentMessage } );
 			mainView.setContent( view );
 			router.navigate('messages/new');
 		});

@@ -1,0 +1,40 @@
+<h2>New Gif'em</h2>
+<form action="/message" id="new-msg-form">
+	<legend>New Message Form</legend>
+	<div class="form-element">
+		<label for="sender">
+			Your Name: <dfn title="required">*</dfn>
+		</label>
+		<input id="sender"  name="sender" type="text"  value="<%=sender%>" />
+	</div>
+	<div class="form-element">
+		<label for="title">
+			Recipient's Name: <dfn title="required">*</dfn>
+		</label>
+		<input id="recipient"  type="text"  name="recipient" required="required" value="<%=recipient %>"  />
+	</div>
+	<div class="form-element">
+		<label for="textMessage">
+			Message: <dfn title="required">*</dfn>
+		</label>
+		<textarea id="textMessage" name="textMessage" value="<%=textMessage %>" ></textarea>
+	</div>
+	<div class="form-element">
+		
+			<div 
+				<%if(typeof imageData != 'undefined'){%>
+				class="cta-find-a-gif found" 
+				style="background-image: url('<%= imageData.small.url %>')" 
+			<%}else{%>
+				class="cta-find-a-gif" 
+			<%}%>
+			>Add a GIF</div>
+		
+	</div>
+	<div class="form-element">
+		<input id="submit-msg" type="submit" value="Submit">
+	</div>
+</form>	
+<div class="ui-message">
+	<h2>Let's go see your message</h2>
+</div>
