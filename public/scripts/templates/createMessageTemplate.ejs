@@ -1,17 +1,17 @@
-<h2>New message!</h2>
+<h2>New Gif'em</h2>
 <form action="/message" id="new-msg-form">
 	<legend>New Message Form</legend>
 	<div class="form-element">
 		<label for="sender">
 			Your Name: <dfn title="required">*</dfn>
 		</label>
-		<input id="sender"  name="sender" placeholder="Jon Doe" type="text"  value="<%=sender%>" />
+		<input id="sender"  name="sender" type="text"  value="<%=sender%>" />
 	</div>
 	<div class="form-element">
 		<label for="title">
 			Recipient's Name: <dfn title="required">*</dfn>
 		</label>
-		<input id="recipient"  type="text"  name="recipient" required="required" placeholder="Jane Doe" value="<%=recipient %>"  />
+		<input id="recipient"  type="text"  name="recipient" required="required" value="<%=recipient %>"  />
 	</div>
 	<div class="form-element">
 		<label for="textMessage">

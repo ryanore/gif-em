@@ -1,12 +1,12 @@
 /*COLORS*/
-$bodyColor: #666;
+$bodyColor: #888;
 $white: rgb(255,255,255);			//#fff;
 $black: rgb(0,0,0);		 				//#000;
 $dark: rgb(34,34,34);					//#222
-$brand: rgb(21,123,178);			//#157BB2
-$brandHL: rgb(0,166,255);			//#00A6FF
-$brand2nd: rgb(234,132,0); 		//#FF8F00
-$brand2ndHL: rgb(255,155,25);	//#FF9B19
+/*$brand: rgb(21,123,178);			//#157BB2*/
+/*$brandHL: rgb(0,166,255);			//#00A6FF*/
+$brand: rgb(234,132,0); 		//#FF8F00
+$brandHL: rgb(255,155,25);	//#FF9B19
 
 /*BREAKPOINTS*/
 $tablet: 600px;
@@ -17,7 +17,7 @@ $desktopWide: 1140px;
 
 /*FONTS*/
 $bodyFont: sans-serif;
-$headingFont: 'Chelsea Market', Impact, Arial;
+$headingFont: Impact, Arial;
 $formFont: Arial, sans-serif;
 
 

@@ -1,5 +1,9 @@
 #create-msg{
 
+	label{
+		color: $bodyColor;
+	}
+	
 	.cta-find-a-gif{
 			@include border-radius(5px);
 			height: 70px;
@@ -10,7 +14,7 @@
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center center;
-			border: 2px dotted $brand;
+			border: 1px dashed $bodyColor;
 			text-align: center;
 			font-family: $headingFont;
 			font-weight: bold;
@@ -19,13 +23,12 @@
 			@include border-radius(5px);
 			float: left;
 			background-color: $dark;
-			border: 2px solid $brand2nd;
 			text-indent: -999em;
 	}
 	
 	input[type="submit"]{
-		@include cta($white, $brand2nd, $brand2ndHL, $headingFont);
-		margin-top: 10px;
+		@include cta($white, $brand, $brandHL, $headingFont);
+		margin-top: 18px;
 		float: right;
 		width: 45%;
 	}

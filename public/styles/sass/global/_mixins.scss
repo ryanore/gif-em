@@ -93,7 +93,7 @@
 }
 
 @mixin roundButton(){
-	@include cta($white, $brand2nd, $brand2ndHL);
+	@include cta($white, $brand, $brandHL);
 	@include box-shadow( 0 3px 3px rgba(0, 0, 0, 0.6));
 	font-size: 14px;
 	height: 36px;

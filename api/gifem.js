@@ -1,5 +1,5 @@
 
-var Ntihya = (function(){
+var Gifem = (function(){
 	
 	var Messages = require('./controllers/message');
 	var Giphy = require('./controllers/giphy');
@@ -32,5 +32,5 @@ var Ntihya = (function(){
 
 })();
 
-module.exports = Ntihya;
+module.exports = Gifem;
 

@@ -25,15 +25,14 @@ form{
 	input[type="email"],
 	textarea{
 		@include inputText($white, $bodyFont);
-/*		background: rgba($brand2ndHL, .1);*/
-		color: $brand;
 		margin: 5px 0 10px 0;
-		border: 2px double $brand;
+		border: 1px solid $bodyColor;
 		border-radius: 4px;	
 		font-weight: bold;
+		color: $bodyColor;
 		-webkit-appearance:none;
 		&:focus{
-			border-color: $brand2ndHL; 
+			border-color: $brandHL; 
 		}
 	}
 

@@ -1,11 +1,3 @@
-@font-face {
-  font-family: 'Chelsea Market';
-  font-style: normal;
-  font-weight: 400;
-  src: url(http://themes.googleusercontent.com/static/fonts/chelseamarket/v2/qSdzwh2A4BbNemy78sJLfA3qKyi53QElYbtEeYEI7AQ.woff) format('woff');
-}
-
-
 html *{
 	line-height: 1.4em;
 }
@@ -22,18 +14,18 @@ p{
 }
 
 h1{
-	font-size: 3em;
+	font-size: 3.5em;
 	margin: 1em 0 10px 0;
 }
 h2{
-	font-size: 1.8em;
+	font-size: 2.3em;
 	margin: 0 0 20px 0;
 }
 
 h1, h2{
+	color: $brand;
 	text-align: center;
 	line-height: 1.2;
-	color: $brand;
 	text-transform: uppercase;
 	font-family: $headingFont;
 }
