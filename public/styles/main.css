@@ -869,15 +869,18 @@ h1 strong {
   border-radius: 5px;
   height: 70px;
   width: 45%;
+  line-height: 65px;
+  color: #157bb2;
   float: left;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 2px dotted #aaa;
+  border: 2px dotted #157bb2;
   text-align: center;
-  line-height: 50px;
+  font-family: "Chelsea Market", Impact, Arial;
+  font-weight: bold;
 }
-/* line 15, sass/pages/_newmessage.scss */
+/* line 18, sass/pages/_newmessage.scss */
 #create-msg .cta-find-a-gif.found {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -889,7 +892,7 @@ h1 strong {
   border: 2px solid #ea8400;
   text-indent: -999em;
 }
-/* line 23, sass/pages/_newmessage.scss */
+/* line 26, sass/pages/_newmessage.scss */
 #create-msg input[type="submit"] {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -907,7 +910,7 @@ h1 strong {
 #create-msg input[type="submit"]:hover {
   background-color: #ff9b19;
 }
-/* line 30, sass/pages/_newmessage.scss */
+/* line 33, sass/pages/_newmessage.scss */
 #create-msg #textMessage {
   padding: 10px;
   height: 75px;

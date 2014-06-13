@@ -16,6 +16,6 @@ var environment_setup ={
 
 var config = environment_setup[env];
 	config.version = "0.0.1";
-	config.appPath = "./api/ntihya";
+	config.appPath = "./api/gifem";
 	config.env = env;
 exports = module.exports = config;

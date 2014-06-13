@@ -4,13 +4,16 @@
 			@include border-radius(5px);
 			height: 70px;
 			width: 45%;
+			line-height: 65px;
+			color: $brand;
 			float: left;
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center center;
-			border: 2px dotted #aaa;
+			border: 2px dotted $brand;
 			text-align: center;
-			line-height: 50px;
+			font-family: $headingFont;
+			font-weight: bold;
 	}
 	.cta-find-a-gif.found{
 			@include border-radius(5px);

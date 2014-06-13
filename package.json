@@ -1,7 +1,7 @@
 {
-	  "name": "ntihya",
+	  "name": "gif-em",
 	  "author": "Ryan Ore",
-	  "description": "NOW THAT I HAVE YOUR ATTENTION! Silly Messaging Application",
+	  "description": "A message/meme generation application.",
 	  "version": "0.0.1",
 	  "private": true,
 	  "scripts": {
