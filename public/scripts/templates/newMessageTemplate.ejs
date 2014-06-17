@@ -1,0 +1,47 @@
+<h2>New Gif'em</h2>
+<form action="/message" id="new-msg-form" class="container">
+	<legend>New Gif'em Form</legend>
+	<div class="two-thirds column table searchGifs">
+		<div class="form-element">
+		<%if(typeof imageData != 'undefined'){%>
+				<div class="cta-find-a-gif found">
+					<span class="top output"></span>
+					<span class="bottom output"></span>
+					<img src="<%= imageData.small.url %>" />
+				</div>
+		<%}else{%>
+				<div class="cta-find-a-gif" >Find a GIF</div>
+		<%}%>		
+		</div>
+	</div>
+	
+	<div class="one-third column">
+		<div class="form-element ">
+			<label for="captionTop">
+				Top Caption: <dfn title="required">*</dfn>
+				<input type="text" id="captionTop" name="captionTop" 
+					<%if(typeof tempTop != 'undefined'){%>
+						value="<%=tempTop%>">
+					<%}%>
+				</input>
+			</label>
+		</div>
+		<div class="form-element">
+			<label for="captionBottom">
+				Bottom Caption: <dfn title="required">*</dfn>
+					<input type="text" id="captionBottom" name="captionBottom" 
+						<%if(typeof tempBottom != 'undefined'){%>
+							value="<%=tempBottom%>">
+						<%}%>	
+					</input>
+			</label>
+		</div>
+
+		<div class="form-element">
+			<input class="" id="submit-msg" type="submit" value="Submit">
+		</div>
+	</div>
+</form>	
+<div class="ui-message">
+	<h2>Let's go see your message</h2>
+</div>

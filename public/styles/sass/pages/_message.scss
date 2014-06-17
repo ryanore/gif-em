@@ -1,35 +1,73 @@
+
 .msg-container{
-	display: table;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-color: $black;
 	height: 100%;
 	width: 100%;
-	position: fixed;
-	top:0;left:0;right:0;bottom:0;
-	*{
-		text-align: center;
-	}
-	
-	@media only screen and (orientation : portrait) {
-		&.portrait{
-			background-size: cover;
-		}
-		&.landscape{
-			background-size: contain;
-		}
-	}
-	@media only screen and (orientation : landscape) {
-		&.portrait{
-			background-size: contain;
-		}
-		&.landscape{
-			background-size: cover;
-		}
-	}
-	
+	margin: 0 auto;
+	display: table;
 }
+
+.msg-body{
+	opacity: 0;
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+	width: 100%;
+	max-width: 600px;
+	max-height: 600px;
+}
+.output{
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+
+	font-size: 50px;
+	@media only screen
+	and (min-width: 500px){
+		font-size: 60px;
+	}
+	@media only screen
+	and (min-width: 700px){
+		font-size: 100px;
+	}
+
+	@media only screen
+	and (orientation: landscape){
+		max-width: 400px;
+	}
+
+	@media only screen 
+	and (min-height : 500px){
+		max-width: 700px;
+	}
+
+	img{
+			width: 100%;
+		}
+	h2{
+		font-size: inherit;
+		position: absolute;
+		width: 100%;
+		margin: 0;
+		padding: 5px 0;
+		text-align: center;
+		font-weight: bold;
+		color: #fff;
+		text-shadow:
+			-2px -2px 0 #000,
+			2px -2px 0 #000,
+			-2px 2px 0 #000,
+			2px 2px 0 #000;
+		
+		&.top{
+			top: 0;
+		}
+		&.bottom{
+			bottom: 0;
+			padding-bottom: 20px;
+		}
+	}
+}
+
 
 .message-cta{
 	@extend %link;
@@ -38,46 +76,16 @@
 	bottom: 0;
 	left: 0;
 	text-align: left;
-	padding: 3px 15px;
-	border-top-right-radius: 5px;
 	color: $brandHL;
 	border: $brand;
 	display: block;
-	background: $white;
+	font-size: 13px;
 }
 
-.msg-body{
-	opacity: 0;
-	display: table-cell;
-	vertical-align: middle;
-	.close{
-		@include roundButton();
-		position: absolute;
-		right: 5px;
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .msg-body .output h2{
+		text-shadow: none;
+		-webkit-text-stroke-width: 2px;
+	 	-webkit-text-stroke-color: black;
 	}
 }
-.msg-container{
-	&.white-on-black{
-		.msg-body .inner{
-			padding: 20px 5px;
-			background: rgba(0,0,0,.3);
-			h1,h2,p{
-				color: $white;
-			}
-		}
-	}
-	
-	&.black-on-white{
-		.msg-body .inner{
-			padding: 20px 5px;
-			margin: 0 2%;
-			background: rgba(255,255,255,.3);
-			border: 3px solid black;
-			h1,h2,p{
-				color: #000;
-			}
-				
-		}
-	}
-}
-

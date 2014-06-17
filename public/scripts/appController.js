@@ -8,7 +8,7 @@ define([
 	'MessageView',
 	'AllMessagesView',
 	'MessagesCollection',
-	'NewGifemView',
+	'NewMessageView',
 	'SearchGiphyView',
 	'GiphyCollection'
 ],function(
@@ -21,7 +21,7 @@ define([
 	MessageView,
 	AllMessagesView,
 	MessagesCollection,
-	NewGifemView,
+	NewMessageView,
 	SearchGiphyView,
 	GiphyCollection
 ){
@@ -105,13 +105,14 @@ define([
 
 	var newMessage = function () {
 		mainView.transition(function(){
-			var view = new NewGifemView( { model: currentMessage } );
+			var view = new NewMessageView( { model: currentMessage } );
 			mainView.setContent( view );
 			router.navigate('messages/new');
 		});
 	};
 
 	var message = function ($id) {
+		console.log('nav:message: $id='+$id);
 		mainView.transition(function(){
 			var message = new Message({id: $id});
 			message.fetch({success: function(options){

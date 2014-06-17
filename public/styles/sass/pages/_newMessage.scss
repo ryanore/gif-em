@@ -1,43 +1,88 @@
 #create-msg{
+	.table.searchGifs{
+		border: 1px dashed $bodyColor;
+		display: table;
+		margin-bottom: 20px;
+		cursor: pointer;
+		color: $bodyColor;
+		text-align: center;
+		font-family: $headingFont;
+		text-transform: uppercase;
+		
+		@media only screen and (min-width: 700px){
+			min-height: 400px;
+			line-height: 400px;
+		}
 
+		.form-element{
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+
+
+	.cta-find-a-gif{
+			position: relative;
+	}
+	.cta-find-a-gif.found{
+			font-size: 60px;
+			background-color: $dark;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			line-height: 0;
+			height: auto;
+		
+			img{
+				width: 100%;
+				min-height: 200px;
+			}
+		
+			@media only screen and (min-width: 700px){
+				font-size: 90px;
+			}
+
+	}
+	
+	
+	.output{
+		width: 100%;
+		text-align: center;
+		font-family: $headingFont;
+		text-transform: uppercase;
+		font-size: 40px;
+		font-weight: bold;
+		color: #fff;
+		position: absolute; 
+		
+		&.top{
+			top: 0;
+		}
+		&.bottom{
+			bottom: 0;
+		}
+   -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: black;
+	}
+	
+	
 	label{
 		color: $bodyColor;
 	}
 	
-	.cta-find-a-gif{
-			@include border-radius(5px);
-			height: 70px;
-			width: 45%;
-			line-height: 65px;
-			color: $brand;
-			float: left;
-			background-size: contain;
-			background-repeat: no-repeat;
-			background-position: center center;
-			border: 1px dashed $bodyColor;
-			text-align: center;
-			font-family: $headingFont;
-			font-weight: bold;
+	input[type="text"]{
+		text-align: center;
+		height: 25px;
+		padding: 5px 0;
+		text-transform: uppercase;
 	}
-	.cta-find-a-gif.found{
-			@include border-radius(5px);
-			float: left;
-			background-color: $dark;
-			text-indent: -999em;
-	}
-	
 	input[type="submit"]{
 		@include cta($white, $brand, $brandHL, $headingFont);
 		margin-top: 18px;
-		float: right;
 		width: 45%;
+		opacity: 0;
 	}
 
-	#textMessage{
-		padding: 10px;
-		height: 75px;
-	}
-	
 }
 
 

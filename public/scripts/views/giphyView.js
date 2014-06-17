@@ -33,7 +33,9 @@ function(
 		
 		initialize:function () {
 			this.loader = new Image();
+
 			this.render();
+			
 		},
 
 		handleSelection: function(e){
@@ -68,12 +70,13 @@ function(
 			var self = this;
 			
 			this.$el.html(this.template(this.model.toJSON()));
-			
+
 			this.btn_select = this.$el.find('button');
-			
+
 			this.image = this.$el.find('.image').css({
 				'background-image': "url("+self.model.get("small").still+")"
 			});
+			
 			return this;
 		},
 

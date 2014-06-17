@@ -3,8 +3,7 @@ $bodyColor: #888;
 $white: rgb(255,255,255);			//#fff;
 $black: rgb(0,0,0);		 				//#000;
 $dark: rgb(34,34,34);					//#222
-/*$brand: rgb(21,123,178);			//#157BB2*/
-/*$brandHL: rgb(0,166,255);			//#00A6FF*/
+$brand2nd: rgb(21,123,178);			//#157BB2
 $brand: rgb(234,132,0); 		//#FF8F00
 $brandHL: rgb(255,155,25);	//#FF9B19
 
@@ -32,4 +31,5 @@ $navHeightMobile: 45px;
 @import 'global/typography';
 @import 'global/mixins';
 @import 'global/forms';
+@import 'global/helpers';
 @import 'pages/appMain';

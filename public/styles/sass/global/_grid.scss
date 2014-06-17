@@ -1,10 +1,56 @@
 
+
+
 .container                                  { position: relative; width: 100%; margin: 0 auto; padding: 0; }
 .column, .columns                           { float: left; display: inline; margin: 0; }
+
+.container { width: 100%; }
+.columns, .column { margin: 0; }
+.container .column,
+.container .columns { width: 100%; } 
+.container [data-col="1"],						
+.container [data-col="2"],					
+.container [data-col="3"]	,					
+.container [data-col="4"]	,					
+.container [data-col="5"]	,					
+.container [data-col="6"]	,					
+.container [data-col="7"]	,					
+.container [data-col="8"]	,					
+.container [data-col="9"]	,					
+.container [data-col="10"],					
+.container [data-col="11"],					
+.container [data-col="12"],					
+.container [data-col="13"],					
+.container [data-col="14"],					
+.container [data-col="15"],					
+.container [data-col="16"]{width:100%;}
+
+/* Offsets  */
+.container [data-offset="1"],               
+.container [data-offset="2"],                  
+.container [data-offset="3"],                 
+.container [data-offset="4"],                  
+.container [data-offset="5"],                 
+.container [data-offset="6"],                  
+.container [data-offset="7"],              
+.container [data-offset="8"],                 
+.container [data-offset="9"],                 
+.container [data-offset="10"],                 
+.container [data-offset="11"],                
+.container [data-offset="12"],                
+.container [data-offset="13"],              
+.container [data-offset="14"],              
+.container [data-offset="15"]{ padding-left: inherit}               
+
 
 /* Nested Column Classes */
 .column.alpha, .columns.alpha               { margin-left: 0; }
 .column.omega, .columns.omega               { margin-right: 0; }
+
+
+@media only screen and (min-width: 500px) {
+	
+.column, .columns                           { padding: 0 20px;}
 
 /* Base Grid */
 .container .one.column                      { width: 6.25%;  } 
@@ -43,52 +89,6 @@
 .container .offset-by-thirteen              { padding-left: 81.25%; } 
 .container .offset-by-fourteen              { padding-left: 87.5%; } 
 .container .offset-by-fifteen               { padding-left: 93.75%; }
-
-
-
-/*  (Portrait)
-================================================== */
-
-@media only screen and (orientation : portrait) {
-	.container { width: 100%; }
-	.columns, .column { margin: 0; }
-
-	.container .one.column,
-	.container .two.columns,
-	.container .three.columns,
-	.container .four.columns,
-	.container .five.columns,
-	.container .six.columns,
-	.container .seven.columns,
-	.container .eight.columns,
-	.container .nine.columns,
-	.container .ten.columns,
-	.container .eleven.columns,
-	.container .twelve.columns,
-	.container .thirteen.columns,
-	.container .fourteen.columns,
-	.container .fifteen.columns,
-	.container .sixteen.columns,
-	.container .one-third.column,
-	.container .two-thirds.column  { width: 100%; } /*300px*/
-
-	/* Offsets */
-	.container .offset-by-one,
-	.container .offset-by-two,
-	.container .offset-by-three,
-	.container .offset-by-four,
-	.container .offset-by-five,
-	.container .offset-by-six,
-	.container .offset-by-seven,
-	.container .offset-by-eight,
-	.container .offset-by-nine,
-	.container .offset-by-ten,
-	.container .offset-by-eleven,
-	.container .offset-by-twelve,
-	.container .offset-by-thirteen,
-	.container .offset-by-fourteen,
-	.container .offset-by-fifteen { padding-left: 0; }
-
 }
 
 

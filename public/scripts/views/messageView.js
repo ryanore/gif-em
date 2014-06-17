@@ -27,26 +27,13 @@ function(
 		id: 'message',
 		msg: null,
 		
-		events: function() {
-	        var events = {};
-			events[ utils.clickEvt+ ' .close'] =  'closeMsg';
-		    return events;
-	    },
-	
-		closeMsg: function() {
-			console.log('fadeout');
-			$('.msg-body').fadeOut();
-		},
-	    
 		initialize: function () {
-			_.bindAll(this, 'render');
 			this.render();
         },
 
         render: function () {
 			this.$el.html(this.template(this.model.toJSON()));
 			this.msg = $('.msg-body');
-			var self = this;
 			setTimeout(function(){
 				$('.msg-body').animate({opacity:1},function(){
 					$('[data-fade]').addClass('show');
@@ -55,7 +42,6 @@ function(
 			return this;
         },
 
-		// Clean UP
 		close: function () {
 			return this;
 		}

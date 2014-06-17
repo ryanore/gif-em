@@ -13,9 +13,9 @@ exports.list = function(req, res) {
 
 exports.create = function(req, res) {
 	var msg = new Message(); 
-	msg.sender = req.body.sender;
-	msg.recipient = req.body.recipient;
-	msg.textMessage = req.body.textMessage;
+	console.log(req.body);
+	msg.captionTop = req.body.captionTop;
+	msg.captionBottom = req.body.captionBottom;
 	msg.brightness = req.body.brightness || 0;
 	msg.imageData = req.body.imageData || null;
 	msg.privacy = req.body.privacy || 0;

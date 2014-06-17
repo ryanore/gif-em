@@ -2,9 +2,8 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
 var MessageSchema   = new Schema({
-	sender: String,
-	recipient: String,
-	textMessage: String,
+	captionTop: String,
+	captionBottom: String,
 	brightness: Number,
 	imageData: Object,
 	privacy: Number, 

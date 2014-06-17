@@ -1,15 +1,22 @@
-<div class="msg-container black-on-white <%= imageData.orientation %>" style="background-image: url('<%= imageData.small.url %>');">
+<div class="msg-container black-on-white <%= imageData.orientation %>" >
 	<div  class="msg-body">
-		<button class="close">X</button>
-		<div class="inner">
-				<h2 data-fade=".25">Hey <%=recipient %>, Now that I have your attention,</h2>
-				<p data-fade="1">	<%= textMessage %></p>
-				<br>
-				<p data-fade="2">Sincerely,
-					<%= sender %>
-				</p>
+			<div class="inner output" >
+			
+				<h2 style="font-size: <%= topSize %>"
+					  class="top" 
+						data-fade="2"><%= captionTop %>
+				</h2>
+			
+				<h2 style="font-size: <%= bottomSize %>"
+					 	class="bottom" 
+						data-fade="3"><%= captionBottom %>
+				</h2>
+			
+				<img src="<%= imageData.small.url %>" />
+				
+				<a data-fade="5" class="message-cta" href="/">gif-em.com</a>
+				
 			</div>
+			
 	</div><!-- .msg-body -->
-	<a data-fade="5" class="message-cta" href="/">gif-em.com</a>
-	
 </div>
