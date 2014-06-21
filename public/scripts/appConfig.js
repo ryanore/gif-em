@@ -18,7 +18,7 @@ require.config({
 		MessageView:'views/messageView',
 		AllMessagesView:'views/allMessagesView',
 		RecentMessagesView:'views/recentMessagesView',
-		NewMessageView:'views/NewMessageView',
+		NewMessageView:'views/newMessageView',
 		SearchGiphyView:'views/searchGiphyView',
 		GiphyView:'views/giphyView',
 
