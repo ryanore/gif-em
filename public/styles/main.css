@@ -69,7 +69,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 4, sass/global/_grid.scss */
 .container {
-  position: relative;
   width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -702,14 +701,17 @@ form input[type="button"]:hover {
   *zoom: 1;
 }
 
-/* line 1, sass/pages/_appMain.scss */
-body {
+/* line 2, sass/pages/_appMain.scss */
+body,
+html {
   background: white;
   font-family: sans-serif;
   color: #888888;
+  width: 100%;
+  height: 100%;
 }
 
-/* line 7, sass/pages/_appMain.scss */
+/* line 10, sass/pages/_appMain.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -717,17 +719,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 12, sass/pages/_appMain.scss */
+/* line 15, sass/pages/_appMain.scss */
 h1 {
   margin-top: 0;
 }
 
-/* line 15, sass/pages/_appMain.scss */
+/* line 18, sass/pages/_appMain.scss */
 li {
   list-style-type: none;
 }
 
-/* line 18, sass/pages/_appMain.scss */
+/* line 21, sass/pages/_appMain.scss */
 ul {
   margin: 0;
   padding: 0;
@@ -736,14 +738,14 @@ ul {
 /*
 *	MAIN NAV / HEADER
 */
-/* line 26, sass/pages/_appMain.scss */
+/* line 29, sass/pages/_appMain.scss */
 header {
   position: relative;
   min-height: 40px;
   width: 100%;
 }
 
-/* line 32, sass/pages/_appMain.scss */
+/* line 35, sass/pages/_appMain.scss */
 .main-nav {
   padding-top: 45px;
   max-height: 0;
@@ -755,12 +757,12 @@ header {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   transition: .6s;
 }
-/* line 40, sass/pages/_appMain.scss */
+/* line 43, sass/pages/_appMain.scss */
 .main-nav.extended {
   max-height: 400px;
   background: #ea8400;
 }
-/* line 44, sass/pages/_appMain.scss */
+/* line 47, sass/pages/_appMain.scss */
 .main-nav li {
   display: block;
   width: 100%;
@@ -773,7 +775,7 @@ header {
   font-weight: bold;
 }
 @media screen and (min-width: 600px) {
-  /* line 32, sass/pages/_appMain.scss */
+  /* line 35, sass/pages/_appMain.scss */
   .main-nav {
     padding-top: 0;
     max-height: inherit;
@@ -782,7 +784,7 @@ header {
     text-align: right;
     width: 100%;
   }
-  /* line 63, sass/pages/_appMain.scss */
+  /* line 66, sass/pages/_appMain.scss */
   .main-nav li {
     display: inline-block;
     padding: 1em;
@@ -795,7 +797,7 @@ header {
 }
 
 /* NAVIGATION HAMBURGER */
-/* line 77, sass/pages/_appMain.scss */
+/* line 80, sass/pages/_appMain.scss */
 .hamburger {
   position: absolute;
   right: 5%;
@@ -804,11 +806,11 @@ header {
   border: none;
   padding: 15px;
 }
-/* line 84, sass/pages/_appMain.scss */
+/* line 87, sass/pages/_appMain.scss */
 .hamburger:focus {
   outline: none;
 }
-/* line 87, sass/pages/_appMain.scss */
+/* line 90, sass/pages/_appMain.scss */
 .hamburger .icon-bar {
   display: block;
   width: 24px;
@@ -816,19 +818,19 @@ header {
   border-radius: 1px;
   background: white;
 }
-/* line 94, sass/pages/_appMain.scss */
+/* line 97, sass/pages/_appMain.scss */
 .hamburger .icon-bar + .icon-bar {
   margin-top: 4px;
 }
 @media screen and (min-width: 600px) {
-  /* line 77, sass/pages/_appMain.scss */
+  /* line 80, sass/pages/_appMain.scss */
   .hamburger {
     display: none;
   }
 }
 
 /* MAIN LOADING INDICATOR*/
-/* line 106, sass/pages/_appMain.scss */
+/* line 109, sass/pages/_appMain.scss */
 #loading {
   -webkit-transition: opacity 0.5s ease;
   -moz-transition: opacity 0.5s ease;
@@ -849,13 +851,13 @@ header {
   background: white url(../images/loading.gif) no-repeat center center;
   background-size: 50%;
 }
-/* line 122, sass/pages/_appMain.scss */
+/* line 125, sass/pages/_appMain.scss */
 #loading.loading {
   top: 50%;
   opacity: 1;
 }
 
-/* line 129, sass/pages/_appMain.scss */
+/* line 132, sass/pages/_appMain.scss */
 .ui-message {
   position: fixed;
   width: 100%;
@@ -873,7 +875,7 @@ header {
 }
 
 /* PAGES */
-/* line 147, sass/pages/_appMain.scss */
+/* line 150, sass/pages/_appMain.scss */
 #content {
   max-width: 1200px;
   padding: 20px 5%;
@@ -1237,20 +1239,26 @@ h1 strong {
   width: 100%;
   margin: 0 auto;
   display: table;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
 }
 
-/* line 9, sass/pages/_message.scss */
+/* line 12, sass/pages/_message.scss */
 .msg-body {
   opacity: 0;
   display: table-cell;
   vertical-align: middle;
   position: relative;
   width: 100%;
-  max-width: 600px;
-  max-height: 600px;
+  max-width: 700px;
+  max-height: 700px;
 }
 
-/* line 18, sass/pages/_message.scss */
+/* line 21, sass/pages/_message.scss */
 .output {
   position: relative;
   width: 100%;
@@ -1258,34 +1266,34 @@ h1 strong {
   font-size: 50px;
 }
 @media only screen and (min-width: 500px) {
-  /* line 18, sass/pages/_message.scss */
+  /* line 21, sass/pages/_message.scss */
   .output {
     font-size: 60px;
   }
 }
 @media only screen and (min-width: 700px) {
-  /* line 18, sass/pages/_message.scss */
+  /* line 21, sass/pages/_message.scss */
   .output {
     font-size: 100px;
   }
 }
 @media only screen and (orientation: landscape) {
-  /* line 18, sass/pages/_message.scss */
+  /* line 21, sass/pages/_message.scss */
   .output {
     max-width: 400px;
   }
 }
 @media only screen and (min-height: 500px) {
-  /* line 18, sass/pages/_message.scss */
+  /* line 21, sass/pages/_message.scss */
   .output {
     max-width: 700px;
   }
 }
-/* line 43, sass/pages/_message.scss */
+/* line 46, sass/pages/_message.scss */
 .output img {
   width: 100%;
 }
-/* line 46, sass/pages/_message.scss */
+/* line 49, sass/pages/_message.scss */
 .output h2 {
   font-size: inherit;
   position: absolute;
@@ -1297,17 +1305,17 @@ h1 strong {
   color: #fff;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
-/* line 61, sass/pages/_message.scss */
+/* line 64, sass/pages/_message.scss */
 .output h2.top {
   top: 0;
 }
-/* line 64, sass/pages/_message.scss */
+/* line 67, sass/pages/_message.scss */
 .output h2.bottom {
   bottom: 0;
   padding-bottom: 20px;
 }
 
-/* line 72, sass/pages/_message.scss */
+/* line 75, sass/pages/_message.scss */
 .message-cta {
   position: absolute;
   display: inline-block;
@@ -1321,7 +1329,7 @@ h1 strong {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* line 86, sass/pages/_message.scss */
+  /* line 89, sass/pages/_message.scss */
   .msg-body .output h2 {
     text-shadow: none;
     -webkit-text-stroke-width: 2px;

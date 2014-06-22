@@ -4,6 +4,9 @@
 	width: 100%;
 	margin: 0 auto;
 	display: table;
+	position:absolute;
+	top:0;bottom:0;left:0;right:0;
+	background: #000;
 }
 
 .msg-body{
@@ -12,8 +15,8 @@
 	vertical-align: middle;
 	position: relative;
 	width: 100%;
-	max-width: 600px;
-	max-height: 600px;
+	max-width: 700px;
+	max-height: 700px;
 }
 .output{
 	position: relative;
