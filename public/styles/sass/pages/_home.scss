@@ -8,6 +8,9 @@ h1 strong{
 	.description{
 		text-align: center;
 	}
+	iframe{
+		display: none;
+	}
 	.footer{
 		position: fixed;
 		bottom: 0;
@@ -42,10 +45,16 @@ h1 strong{
 		
 		@media screen and (min-width: $tablet) {
 			.description{
-				min-height: 300px;
+			}
+			iframe{
+				display: block;
+					margin: 0 auto;
+					height: 300px;
+					width: 100%;
 			}
 			.footer{
-				position: static;
+				position: absolute;
+				bottom: 50px;
 				.cta.search, .cta.new{
 					width: 30%;
 					margin: 10%;

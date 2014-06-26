@@ -100,7 +100,7 @@ function(
 			
 			var count = txt.length;
 			
-			return 1- (count/40) + 'em';
+			return 1- (count/60) + 'em';
 		},
 		
 		submitMessage: function(e){

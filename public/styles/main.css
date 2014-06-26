@@ -338,7 +338,7 @@ h1, h2 {
 
 /* line 11, sass/global/_typography.scss */
 p {
-  font-family: Impact, Arial;
+  font-family: sans-serif;
   font-size: 1.5em;
 }
 
@@ -704,14 +704,22 @@ form input[type="button"]:hover {
 /* line 2, sass/pages/_appMain.scss */
 body,
 html {
+  position: relative;
   background: white;
   font-family: sans-serif;
   color: #888888;
   width: 100%;
   height: 100%;
 }
+@media screen and (min-width: 600px) {
+  /* line 2, sass/pages/_appMain.scss */
+  body,
+  html {
+    min-height: 500px;
+  }
+}
 
-/* line 10, sass/pages/_appMain.scss */
+/* line 14, sass/pages/_appMain.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -719,17 +727,17 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 15, sass/pages/_appMain.scss */
+/* line 19, sass/pages/_appMain.scss */
 h1 {
   margin-top: 0;
 }
 
-/* line 18, sass/pages/_appMain.scss */
+/* line 22, sass/pages/_appMain.scss */
 li {
   list-style-type: none;
 }
 
-/* line 21, sass/pages/_appMain.scss */
+/* line 25, sass/pages/_appMain.scss */
 ul {
   margin: 0;
   padding: 0;
@@ -738,14 +746,14 @@ ul {
 /*
 *	MAIN NAV / HEADER
 */
-/* line 29, sass/pages/_appMain.scss */
+/* line 33, sass/pages/_appMain.scss */
 header {
   position: relative;
   min-height: 40px;
   width: 100%;
 }
 
-/* line 35, sass/pages/_appMain.scss */
+/* line 39, sass/pages/_appMain.scss */
 .main-nav {
   padding-top: 45px;
   max-height: 0;
@@ -757,12 +765,12 @@ header {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   transition: .6s;
 }
-/* line 43, sass/pages/_appMain.scss */
+/* line 47, sass/pages/_appMain.scss */
 .main-nav.extended {
   max-height: 400px;
   background: #ea8400;
 }
-/* line 47, sass/pages/_appMain.scss */
+/* line 51, sass/pages/_appMain.scss */
 .main-nav li {
   display: block;
   width: 100%;
@@ -775,7 +783,7 @@ header {
   font-weight: bold;
 }
 @media screen and (min-width: 600px) {
-  /* line 35, sass/pages/_appMain.scss */
+  /* line 39, sass/pages/_appMain.scss */
   .main-nav {
     padding-top: 0;
     max-height: inherit;
@@ -784,7 +792,7 @@ header {
     text-align: right;
     width: 100%;
   }
-  /* line 66, sass/pages/_appMain.scss */
+  /* line 70, sass/pages/_appMain.scss */
   .main-nav li {
     display: inline-block;
     padding: 1em;
@@ -797,7 +805,7 @@ header {
 }
 
 /* NAVIGATION HAMBURGER */
-/* line 80, sass/pages/_appMain.scss */
+/* line 84, sass/pages/_appMain.scss */
 .hamburger {
   position: absolute;
   right: 5%;
@@ -806,11 +814,11 @@ header {
   border: none;
   padding: 15px;
 }
-/* line 87, sass/pages/_appMain.scss */
+/* line 91, sass/pages/_appMain.scss */
 .hamburger:focus {
   outline: none;
 }
-/* line 90, sass/pages/_appMain.scss */
+/* line 94, sass/pages/_appMain.scss */
 .hamburger .icon-bar {
   display: block;
   width: 24px;
@@ -818,19 +826,19 @@ header {
   border-radius: 1px;
   background: white;
 }
-/* line 97, sass/pages/_appMain.scss */
+/* line 101, sass/pages/_appMain.scss */
 .hamburger .icon-bar + .icon-bar {
   margin-top: 4px;
 }
 @media screen and (min-width: 600px) {
-  /* line 80, sass/pages/_appMain.scss */
+  /* line 84, sass/pages/_appMain.scss */
   .hamburger {
     display: none;
   }
 }
 
 /* MAIN LOADING INDICATOR*/
-/* line 109, sass/pages/_appMain.scss */
+/* line 113, sass/pages/_appMain.scss */
 #loading {
   -webkit-transition: opacity 0.5s ease;
   -moz-transition: opacity 0.5s ease;
@@ -851,13 +859,13 @@ header {
   background: white url(../images/loading.gif) no-repeat center center;
   background-size: 50%;
 }
-/* line 125, sass/pages/_appMain.scss */
+/* line 129, sass/pages/_appMain.scss */
 #loading.loading {
   top: 50%;
   opacity: 1;
 }
 
-/* line 132, sass/pages/_appMain.scss */
+/* line 136, sass/pages/_appMain.scss */
 .ui-message {
   position: fixed;
   width: 100%;
@@ -875,7 +883,7 @@ header {
 }
 
 /* PAGES */
-/* line 150, sass/pages/_appMain.scss */
+/* line 154, sass/pages/_appMain.scss */
 #content {
   max-width: 1200px;
   padding: 20px 5%;
@@ -892,13 +900,17 @@ h1 strong {
   text-align: center;
 }
 /* line 11, sass/pages/_home.scss */
+#home iframe {
+  display: none;
+}
+/* line 14, sass/pages/_home.scss */
 #home .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
 }
-/* line 17, sass/pages/_home.scss */
+/* line 20, sass/pages/_home.scss */
 #home .footer .cta {
   width: 50%;
   float: left;
@@ -911,28 +923,32 @@ h1 strong {
   font-size: .7em;
   cursor: pointer;
 }
-/* line 28, sass/pages/_home.scss */
+/* line 31, sass/pages/_home.scss */
 #home .footer .cta.search {
   border-right: 1px solid white;
   background: #ea8400 url(../images/search-white.png) no-repeat center bottom;
   background-size: 30px;
 }
-/* line 33, sass/pages/_home.scss */
+/* line 36, sass/pages/_home.scss */
 #home .footer .cta.new {
   border-left: 1px solid white;
   background: #ea8400 url(../images/new-white.png) no-repeat center bottom;
   background-size: 30px;
 }
 @media screen and (min-width: 600px) {
-  /* line 44, sass/pages/_home.scss */
-  #home .description {
-    min-height: 300px;
-  }
-  /* line 47, sass/pages/_home.scss */
-  #home .footer {
-    position: static;
-  }
   /* line 49, sass/pages/_home.scss */
+  #home iframe {
+    display: block;
+    margin: 0 auto;
+    height: 300px;
+    width: 100%;
+  }
+  /* line 55, sass/pages/_home.scss */
+  #home .footer {
+    position: absolute;
+    bottom: 50px;
+  }
+  /* line 58, sass/pages/_home.scss */
   #home .footer .cta.search, #home .footer .cta.new {
     width: 30%;
     margin: 10%;
@@ -1244,7 +1260,7 @@ h1 strong {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #000;
+  background: #fff;
 }
 
 /* line 12, sass/pages/_message.scss */
@@ -1260,10 +1276,11 @@ h1 strong {
 
 /* line 21, sass/pages/_message.scss */
 .output {
+  line-height: 1em;
   position: relative;
   width: 100%;
   margin: 0 auto;
-  font-size: 50px;
+  font-size: 45px;
 }
 @media only screen and (min-width: 500px) {
   /* line 21, sass/pages/_message.scss */
@@ -1274,7 +1291,7 @@ h1 strong {
 @media only screen and (min-width: 700px) {
   /* line 21, sass/pages/_message.scss */
   .output {
-    font-size: 100px;
+    font-size: 70px;
   }
 }
 @media only screen and (orientation: landscape) {
@@ -1289,11 +1306,11 @@ h1 strong {
     max-width: 700px;
   }
 }
-/* line 46, sass/pages/_message.scss */
+/* line 47, sass/pages/_message.scss */
 .output img {
   width: 100%;
 }
-/* line 49, sass/pages/_message.scss */
+/* line 50, sass/pages/_message.scss */
 .output h2 {
   font-size: inherit;
   position: absolute;
@@ -1305,17 +1322,17 @@ h1 strong {
   color: #fff;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
-/* line 64, sass/pages/_message.scss */
+/* line 65, sass/pages/_message.scss */
 .output h2.top {
   top: 0;
 }
-/* line 67, sass/pages/_message.scss */
+/* line 68, sass/pages/_message.scss */
 .output h2.bottom {
   bottom: 0;
   padding-bottom: 20px;
 }
 
-/* line 75, sass/pages/_message.scss */
+/* line 76, sass/pages/_message.scss */
 .message-cta {
   position: absolute;
   display: inline-block;
@@ -1329,7 +1346,7 @@ h1 strong {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* line 89, sass/pages/_message.scss */
+  /* line 90, sass/pages/_message.scss */
   .msg-body .output h2 {
     text-shadow: none;
     -webkit-text-stroke-width: 2px;
