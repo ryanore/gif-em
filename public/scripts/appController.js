@@ -4,6 +4,7 @@ define([
 	'backbone',
 	'MainView',
 	'HomeView',
+	'AboutView',
 	'MessageModel',
 	'MessageView',
 	'AllMessagesView',
@@ -17,6 +18,7 @@ define([
 	Backbone,
 	MainView,
 	HomeView,
+	AboutView,
 	Message,
 	MessageView,
 	AllMessagesView,
@@ -38,6 +40,7 @@ define([
 		routes: {
 			''              : 'home',
 			'home'			: 'home',
+			'about'			: 'about',
 			'message/:id'   : 'message',
 			'messages'		: 'messages',
 			'messages/new'	: 'newMessage',
@@ -49,17 +52,22 @@ define([
 	var initialize = function(){
 		router = new AppRouter();
 		mainView = new MainView();
+		
 		router.on('route:home', home );
+		router.on('route:about', about );
 		router.on('route:messages', messages );
 		router.on('route:message', message );
 		router.on('route:newMessage', newMessage );
+		
 		Backbone.Events.on('nav:home', home);
+		Backbone.Events.on('nav:about', about);
 		Backbone.Events.on('nav:messages', messages);
 		Backbone.Events.on('nav:message', message);
 		Backbone.Events.on('nav:newMessage', newMessage);
 		Backbone.Events.on('nav:toggleSearch', toggleSearch);
 		Backbone.Events.on('message:giphySelected', giphySelected);
 		Backbone.Events.on('network', handleNetwork);
+		
 		Backbone.history.start();
 	};
 	
@@ -102,6 +110,13 @@ define([
 			router.navigate('home');
 		});
 	};
+	var about = function () {
+		console.log('about');
+		mainView.transition(function(){
+			mainView.setContent( new AboutView() );
+			router.navigate('about');
+		});
+	};
 
 	var newMessage = function () {
 		mainView.transition(function(){
@@ -112,7 +127,6 @@ define([
 	};
 
 	var message = function ($id) {
-		console.log('nav:message: $id='+$id);
 		mainView.transition(function(){
 			var message = new Message({id: $id});
 			message.fetch({success: function(options){
