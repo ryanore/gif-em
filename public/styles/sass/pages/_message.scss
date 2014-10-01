@@ -17,10 +17,11 @@
 	width: 100%;
 	max-width: 700px;
 	max-height: 700px;
+	background: #222;
 }
 .section{
 	margin: 0 auto;
-	padding: 2%;
+	padding: 0 2%;
 	@media only screen
 	and (orientation: landscape){
 		max-width: 400px;
@@ -36,7 +37,6 @@
 	line-height: 1em;
 	position: relative;
 	width: 100%;
-
 	font-size: 45px;
 
 	@media only screen
