@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 		copy: {
 			build: {
 				cwd: '<%= conf.src %>',
-				src: [ '**', '!**/*.scss', ],
+				src: [ '**', '!**/*.scss' ],
 				dest: '<%= conf.build %>',
 				expand: true
 			},

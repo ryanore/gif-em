@@ -18,22 +18,9 @@
 	max-width: 700px;
 	max-height: 700px;
 }
-.output{
-	line-height: 1em;
-	position: relative;
-	width: 100%;
+.section{
 	margin: 0 auto;
-
-	font-size: 45px;
-	@media only screen
-	and (min-width: 500px){
-		font-size: 60px;
-	}
-	@media only screen
-	and (min-width: 700px){
-		font-size: 70px;
-	}
-
+	padding: 2%;
 	@media only screen
 	and (orientation: landscape){
 		max-width: 400px;
@@ -43,6 +30,24 @@
 	and (min-height : 500px){
 		max-width: 700px;
 	}
+
+}
+.output{
+	line-height: 1em;
+	position: relative;
+	width: 100%;
+
+	font-size: 45px;
+
+	@media only screen
+	and (min-width: 500px){
+		font-size: 60px;
+	}
+	@media only screen
+	and (min-width: 700px){
+		font-size: 70px;
+	}
+
 
 	img{
 			width: 100%;
@@ -67,7 +72,7 @@
 		}
 		&.bottom{
 			bottom: 0;
-			padding-bottom: 20px;
+			margin-bottom: 20px;
 		}
 	}
 }
@@ -81,8 +86,13 @@
 	text-align: left;
 	color: $brandHL;
 	border: $brand;
-	display: block;
 	font-size: 13px;
+	width: 40%;
+
+	&.right{
+		float: right;
+		text-align: right;
+	}
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {

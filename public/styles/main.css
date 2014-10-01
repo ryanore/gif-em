@@ -1275,42 +1275,47 @@ h1 strong {
 }
 
 /* line 21, sass/pages/_message.scss */
-.output {
-  line-height: 1em;
-  position: relative;
-  width: 100%;
+.section {
   margin: 0 auto;
-  font-size: 45px;
-}
-@media only screen and (min-width: 500px) {
-  /* line 21, sass/pages/_message.scss */
-  .output {
-    font-size: 60px;
-  }
-}
-@media only screen and (min-width: 700px) {
-  /* line 21, sass/pages/_message.scss */
-  .output {
-    font-size: 70px;
-  }
+  padding: 2%;
 }
 @media only screen and (orientation: landscape) {
   /* line 21, sass/pages/_message.scss */
-  .output {
+  .section {
     max-width: 400px;
   }
 }
 @media only screen and (min-height: 500px) {
   /* line 21, sass/pages/_message.scss */
-  .output {
+  .section {
     max-width: 700px;
   }
 }
-/* line 47, sass/pages/_message.scss */
+
+/* line 35, sass/pages/_message.scss */
+.output {
+  line-height: 1em;
+  position: relative;
+  width: 100%;
+  font-size: 45px;
+}
+@media only screen and (min-width: 500px) {
+  /* line 35, sass/pages/_message.scss */
+  .output {
+    font-size: 60px;
+  }
+}
+@media only screen and (min-width: 700px) {
+  /* line 35, sass/pages/_message.scss */
+  .output {
+    font-size: 70px;
+  }
+}
+/* line 52, sass/pages/_message.scss */
 .output img {
   width: 100%;
 }
-/* line 50, sass/pages/_message.scss */
+/* line 55, sass/pages/_message.scss */
 .output h2 {
   font-size: inherit;
   position: absolute;
@@ -1322,17 +1327,17 @@ h1 strong {
   color: #fff;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
-/* line 65, sass/pages/_message.scss */
+/* line 70, sass/pages/_message.scss */
 .output h2.top {
   top: 0;
 }
-/* line 68, sass/pages/_message.scss */
+/* line 73, sass/pages/_message.scss */
 .output h2.bottom {
   bottom: 0;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-/* line 76, sass/pages/_message.scss */
+/* line 81, sass/pages/_message.scss */
 .message-cta {
   display: inline-block;
   bottom: 0;
@@ -1340,12 +1345,17 @@ h1 strong {
   text-align: left;
   color: #ff9b19;
   border: #ea8400;
-  display: block;
   font-size: 13px;
+  width: 40%;
+}
+/* line 92, sass/pages/_message.scss */
+.message-cta.right {
+  float: right;
+  text-align: right;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* line 89, sass/pages/_message.scss */
+  /* line 99, sass/pages/_message.scss */
   .msg-body .output h2 {
     text-shadow: none;
     -webkit-text-stroke-width: 2px;
